@@ -16,13 +16,13 @@ import altair as alt
 import streamlit as st
 from streamlit_navigation_bar import st_navbar
 
-current_dir = os.path.dirname(__file__)
-file_path = os.path.join(current_dir,"world-happiness-report.csv")
-happy = pd.read_csv(file_path)
+# current_dir = os.path.dirname(__file__)
+# file_path = os.path.join(current_dir,"world-happiness-report.csv")
+happy = pd.read_csv(world-happiness-report-2021.csv)
 
-current_dir = os.path.dirname(__file__)
-file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
-happy_2021 = pd.read_csv(file_path)
+# current_dir = os.path.dirname(__file__)
+# file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
+happy_2021 = pd.read_csv(world-happiness-report.csv)
 st.set_page_config(
   page_title="Projet bien-etre / Juin 2024",
   page_icon="☀️",
