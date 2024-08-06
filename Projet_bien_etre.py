@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import plotly.graph_objects as go
@@ -34,6 +34,7 @@ def load_original_data():
 # # current_dir = os.path.dirname(__file__)
 # # file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
 # happy_2021 = pd.read_csv(world-happiness-report.csv)
+
 st.set_page_config(
   page_title="Projet bien-etre / Juin 2024",
   page_icon="☀️",
