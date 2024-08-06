@@ -16,7 +16,7 @@ import altair as alt
 import streamlit as st
 from streamlit_navigation_bar import st_navbar
 
-
+current_dir = os.path.dirname(__file__)
 file_path = os.path.join(current_dir,"world-happiness-report.csv")
 happy = pd.read_csv(file_path)
 
