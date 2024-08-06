@@ -1,22 +1,22 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-import plotly.graph_objects as go
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-import joblib
-import pickle
-import plotly.express as px
-import altair as alt
-import streamlit as st
-from streamlit_navigation_bar import st_navbar
+# import streamlit as st
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import os
+# import plotly.graph_objects as go
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.svm import SVC
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.metrics import confusion_matrix
+# import joblib
+# import pickle
+# import plotly.express as px
+# import altair as alt
+# import streamlit as st
+# from streamlit_navigation_bar import st_navbar
 
-current_dir = os.path.dirname(__file__)
+# current_dir = os.path.dirname(__file__)
 file_path = os.path.join(current_dir,"world-happiness-report.csv")
 happy = pd.read_csv(file_path)
 
