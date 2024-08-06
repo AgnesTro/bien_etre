@@ -18,7 +18,7 @@ from streamlit_navigation_bar import st_navbar
 
 # current_dir = os.path.dirname(__file__)
 # file_path = os.path.join(current_dir,"world-happiness-report.csv")
-happy = pd.read_csv(world-happiness-report-2021)
+happy = pd.read_csv(https://github.com/AgnesTro/bien_etre/blob/26db3cfceb648ad54a2a336df0a86a0ec2472fdb/world-happiness-report-2021.csv)
 
 # current_dir = os.path.dirname(__file__)
 # file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
