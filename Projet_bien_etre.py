@@ -21,7 +21,7 @@
 # from sklearn.metrics import mean_squared_error
 # from sklearn.metrics import mean_absolute_error
 
-
+requirements.txt 
 file_path = ("world-happiness-report.csv")
 happy = pd.read_csv(file_path)
 
