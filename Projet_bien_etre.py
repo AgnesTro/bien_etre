@@ -1,25 +1,25 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import os
-import plotly.graph_objects as go
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-import joblib
-import pickle
-import plotly.express as px
-import altair as alt
-import streamlit as st
-from streamlit_navigation_bar import st_navbar
-from plotly.subplots import make_subplots
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_absolute_error
+# import streamlit as st
+# import pandas as pd
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import os
+# import plotly.graph_objects as go
+# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.svm import SVC
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.metrics import confusion_matrix
+# import joblib
+# import pickle
+# import plotly.express as px
+# import altair as alt
+# import streamlit as st
+# from streamlit_navigation_bar import st_navbar
+# from plotly.subplots import make_subplots
+# from sklearn.model_selection import train_test_split
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.metrics import mean_squared_error
+# from sklearn.metrics import mean_absolute_error
 
 current_dir = os.path.dirname(__file__)
 file_path = os.path.join(current_dir,"world-happiness-report.csv")
