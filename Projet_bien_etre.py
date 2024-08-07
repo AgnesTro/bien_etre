@@ -21,12 +21,11 @@
 # from sklearn.metrics import mean_squared_error
 # from sklearn.metrics import mean_absolute_error
 
-current_dir = os.path.dirname(__file__)
-file_path = os.path.join(current_dir,"world-happiness-report.csv")
+
+file_path = ("world-happiness-report.csv")
 happy = pd.read_csv(file_path)
 
-current_dir = os.path.dirname(__file__)
-file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
+file_path = ("world-happiness-report-2021.csv")
 happy_2021 = pd.read_csv(file_path)
 st.set_page_config(
   page_title="Projet bien-etre / Juin 2024",
