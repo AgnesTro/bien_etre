@@ -20,6 +20,9 @@
 # from sklearn.preprocessing import StandardScaler
 # from sklearn.metrics import mean_squared_error
 # from sklearn.metrics import mean_absolute_error
+conda create streamlit python=3.7 pip
+pip install streamlit
+pip install matplotlib
 
 requirements.txt 
 file_path = ("world-happiness-report.csv")
