@@ -37,11 +37,15 @@ alt.themes.enable("dark")
 #exemple
 @st.cache
 def load_data(csvfile):
-  return df = pd.read_csv(csvfile)
+  return happy = pd.read_csv(csvfile)
 
 load_data("world-happiness-report.csv")
-load_data('world-happiness-report-2021.csv')
 
+
+@st.cache
+def load_data_2(csvfile):
+  return happy_2021 = pd.read_csv(csvfile)
+load_data_2('world-happiness-report-2021.csv')
 # fin
 
 
