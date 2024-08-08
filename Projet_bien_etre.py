@@ -383,323 +383,107 @@ if page == pages[2]:
 if page == pages[2] : 
   st.markdown('''<div style="text-align:center; margin-top: 20px;style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</div>''', unsafe_allow_html=True)
 
-# happy_model = happy_complet
-# # On sépare les données, la cible étant Ladder_score
-# feats = happy_model.drop('Ladder_score',axis =1)
-# target = happy_model['Ladder_score']
-
-# X_train, X_test, y_train, y_test = train_test_split(feats, target, test_size=0.2, random_state = 42)
-
-# # # # On commencer par gérer les NANS pour le jeu de données X_train
-
-# nan_cor = X_train[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
-# countries_cor =nan_cor.Country_name
-# for country in countries_cor :
-#     countries = X_train.Country_name == country
-#     mean_value = X_train.Perceptions_of_corruption.loc[countries].mean()
-#     X_train.Perceptions_of_corruption.loc[countries] = X_train.Perceptions_of_corruption.loc[countries].fillna(mean_value)
-# nan_cor_2 = X_train[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
-# regional_cor =nan_cor_2.Regional_indicator
-# for region in regional_cor :
-#     region = X_train.Regional_indicator == region
-#     mean_value = X_train.Perceptions_of_corruption.loc[region].mean()
-#     X_train.Perceptions_of_corruption.loc[region] = X_train.Perceptions_of_corruption.loc[region].fillna(mean_value)
-
-#         # Etape GDP :
-# nan_GDP=X_train.loc[X_train['Logged_GDP_per_capita'].isna()]
-
-# nan_gdp_2 = X_train[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
-
-# countries_gdp = nan_gdp_2.Country_name
-
-# for country in countries_gdp :
-#     countries = X_train.Country_name == country
-#     mean_value = X_train.Logged_GDP_per_capita.loc[countries].mean()
-#     X_train.Logged_GDP_per_capita.loc[countries] = X_train.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
-
-#  # Etape freedom :
-# nan_free=X_train.loc[X_train['Freedom_to_make_life_choices'].isna()]
-
-# nan_free_2 = X_train[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
-
-# countries_free =nan_free_2.Country_name
-
-# for country in countries_free :
-#     countries = X_train.Country_name == country
-#     mean_value = X_train.Freedom_to_make_life_choices.loc[countries].mean()
-#     X_train.Freedom_to_make_life_choices.loc[countries] = X_train.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
-
-#       # Etape social support :
-# nan_soc=X_train.loc[X_train['Social_support'].isna()]
-
-# nan_soc_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-# countries_soc =nan_soc_2.Country_name
-
-# for country in countries_soc :
-#     countries = X_train.Country_name == country
-#     mean_value = X_train.Social_support.loc[countries].mean()
-#     X_train.Social_support.loc[countries] = X_train.Social_support.loc[countries].fillna(mean_value)
-
-#       # Generosity --> Remplacer par la moyenne
-
-# nan_gen=X_train.loc[X_train['Generosity'].isna()]
-
-# nan_gen_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-# countries_gen =nan_gen_2.Country_name
-
-# for country in countries_gen :
-#     countries = X_train.Country_name == country
-#     mean_value = X_train.Generosity.loc[countries].mean()
-#     X_train.Generosity.loc[countries] = X_train.Generosity.loc[countries].fillna(mean_value)
-
-#     # Healthy_life_expectancy
-
-# # Recherche des NAN pour Healthy_life_expectancy
-# NAN_life = X_train.loc[X_train["Healthy_life_expectancy"].isna()]
-
-# data_to_fill_HK = [
-#     (2006, 82.38),
-#     (2008, 82.34),
-#     (2009, 82.78),
-#     (2010, 82.96),
-#     (2011,83.41),
-#     (2012,83.45),
-#     (2014,83.94),
-#     (2016,84.21),
-#     (2017,84.70),
-#     (2019,85.16)]
-
-# country_name = 'Hong Kong S.A.R. of China'
-# for year, value in data_to_fill_HK:
-#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
-
-# data_to_fill_Kosovo = [
-#     (2007,69.20),
-#     (2008,69.35),
-#     (2009,69.65),
-#     (2010,69.90),
-#     (2011,70.15),
-#     (2012,70.50),
-#     (2013,70.80),
-#     (2014,71.10),
-#     (2015,71.35),
-#     (2016,71.65),
-#     (2017,71.95),
-#     (2018,72.20),
-#     (2019,72.20)]
-
-# # Pas de valeurs trouvée pour 2019; remplacer par 2018
-
-# country_name = 'Kosovo'
-# for year, value in data_to_fill_Kosovo:
-#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
-
-# data_to_fill_Palestine = [
-#     (2011,73.24),
-#     (2012,73.47),
-#     (2013,74.03),
-#     (2014,72.62),
-#     (2015,74.41),
-#     (2016,74.55),
-#     (2017,74.83)]
-
-# country_name = 'Palestinian Territories'
-# for year, value in data_to_fill_Palestine:
-#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
-
-# data_to_fill_Taiwan = [
-#     (2011,78.3),
-#     (2012,78.3),
-#     (2013,79),
-#     (2014,79.5),
-#     (2015,80.20),
-#     (2016,80.5),
-#     (2017,80.5)]
-
-# country_name = 'Taiwan Province of China'
-# for year, value in data_to_fill_Taiwan:
-#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
-
-# # On recommence le meme processus avec X_test
-
-# # # CORRUPTION :
-
-#  # Remplacement des Nan par la moyenne
-# # Nous allons utiliser la moyenne des autres années pour le même pays ou la moyenne de la région pour les pays sans données.
-
-# nan_cor_2 = X_test[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
-
-# countries_cor =nan_cor_2.Country_name
-
-# for country in countries_cor :
-#     countries = X_test.Country_name == country
-#     mean_value = X_test.Perceptions_of_corruption.loc[countries].mean()
-#     X_test.Perceptions_of_corruption.loc[countries] = X_test.Perceptions_of_corruption.loc[countries].fillna(mean_value)
-
-# nan_cor_2 = X_test[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
-
-# regional_cor =nan_cor_2.Regional_indicator
-
-# for region in regional_cor :
-#     region = X_test.Regional_indicator == region
-#     mean_value = X_test.Perceptions_of_corruption.loc[region].mean()
-#     X_test.Perceptions_of_corruption.loc[region] = X_test.Perceptions_of_corruption.loc[region].fillna(mean_value)
-
-#  # Etape GDP :
-# nan_GDP=X_test.loc[X_test['Logged_GDP_per_capita'].isna()]
-
-# nan_gdp_2 = X_test[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
-
-# countries_gdp = nan_gdp_2.Country_name
-
-# for country in countries_gdp :
-#     countries = X_test.Country_name == country
-#     mean_value = X_test.Logged_GDP_per_capita.loc[countries].mean()
-#     X_test.Logged_GDP_per_capita.loc[countries] = X_test.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
-
-
-# # Etape freedom :
-# nan_free=X_test.loc[X_test['Freedom_to_make_life_choices'].isna()]
-
-# nan_free_2 = X_test[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
-
-# countries_free =nan_free_2.Country_name
-
-# for country in countries_free :
-#     countries = X_test.Country_name == country
-#     mean_value = X_test.Freedom_to_make_life_choices.loc[countries].mean()
-#     X_test.Freedom_to_make_life_choices.loc[countries] = X_test.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
-
-#  # Etape social support :
-# nan_soc=X_test.loc[X_test['Social_support'].isna()]
-
-# nan_soc_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-# countries_soc =nan_soc_2.Country_name
-
-# for country in countries_soc :
-#     countries = X_test.Country_name == country
-#     mean_value = X_test.Social_support.loc[countries].mean()
-#     X_test.Social_support.loc[countries] = X_test.Social_support.loc[countries].fillna(mean_value)
-
-# data_to_fill_Maroc = [
-#     (2008,0.621),
-#     (2010,0.621),
-#     (2012,0.631)]
-
-# country_name = 'Morocco'
-# for year, value in data_to_fill_Maroc:
-#   X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# # Generosity --> Remplacer par la moyenne
-# nan_gen=X_test.loc[X_test['Generosity'].isna()]
-# nan_gen_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-# countries_gen =nan_gen_2.Country_name
-
-# for country in countries_gen :
-#     countries = X_test.Country_name == country
-#     mean_value = X_test.Generosity.loc[countries].mean()
-#     X_test.Generosity.loc[countries] = X_test.Generosity.loc[countries].fillna(mean_value)
-
-#  # Healthy_life_expectancy
-
-# # Recherche des NAN pour Healthy_life_expectancy
-# NAN_life = X_test.loc[X_test["Healthy_life_expectancy"].isna()]
-
-# data_to_fill_HK = [
-#     (2006, 82.38),
-#     (2008, 82.34),
-#     (2009, 82.78),
-#     (2010, 82.96),
-#     (2011,83.41),
-#     (2012,83.45),
-#     (2014,83.94),
-#     (2016,84.21),
-#     (2017,84.70),
-#     (2019,85.16)]
-
-# country_name = 'Hong Kong S.A.R. of China'
-# for year, value in data_to_fill_HK:
-#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# data_to_fill_Kosovo = [
-#     (2007,69.20),
-#     (2008,69.35),
-#     (2009,69.65),
-#     (2010,69.90),
-#     (2011,70.15),
-#     (2012,70.50),
-#     (2013,70.80),
-#     (2014,71.10),
-#     (2015,71.35),
-#     (2016,71.65),
-#     (2017,71.95),
-#     (2018,72.20),
-#     (2019,72.20)]
-
-# # Pas de valeurs trouvée pour 2019; remplacer par 2018
-
-# country_name = 'Kosovo'
-# for year, value in data_to_fill_Kosovo:
-#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# data_to_fill_Palestine = [
-#     (2011,73.24),
-#     (2012,73.47),
-#     (2013,74.03),
-#     (2014,72.62),
-#     (2015,74.41),
-#     (2016,74.55),
-#     (2017,74.83)]
-
-# country_name = 'Palestinian Territories'
-# for year, value in data_to_fill_Palestine:
-#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# data_to_fill_Taiwan = [
-#     (2011,78.3),
-#     (2012,78.3),
-#     (2013,79),
-#     (2014,79.5),
-#      (2015,80.20),
-#       (2016,80.5),
-#     (2017,80.5)]
-
-# country_name = 'Taiwan Province of China'
-# for year, value in data_to_fill_Taiwan:
-#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# X_train=X_train.drop(['Country_name','Regional_indicator'],axis=1)
-# X_test=X_test.drop(['Country_name','Regional_indicator'],axis=1)
-
-# # standardisation des données
-# scaler = StandardScaler()
-# X_train_scaled = scaler.fit_transform(X_train)
-# X_test_scaled = scaler.transform(X_test)
-
-def charger_modele():
-    # Charger le modèle à partir du fichier Pickle
-    with open('Regression_lineaire.pkl', 'rb') as fichier_modele:
-        Regression_lineaire = pickle.load(fichier_modele)
-    return Regression_lineaire
+#étape1
+#on récupère les fichiers
+X_train=pd.read_csv('X_train.csv')
+X_test=pd.read_csv('X_test.csv')
+y_train=pd.read_csv('y_train.csv')
+y_test=pd.read_csv('y_test.csv')  
+
+#on sélectionne les variables
+X_train=X_train.drop(['Country_name','Regional_indicator'],axis=1)
+X_test=X_test.drop(['Country_name','Regional_indicator'],axis=1)
+
+#on standardise
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+#on récupère les fichiers entrainés
+lrrecup = joblib.load('model_lin_reg.joblib')
+rdcrecup = joblib.load('model_reg_dec_tree.joblib')
+rrfrecup = joblib.load('model_reg_random_forest.joblib')
+rgbrecup = joblib.load('model_reg_gradient_boost.joblib')
+
+  
+# Calcul des métriques pour regression linéaire
+y_pred_Test_lin_reg = lrrecup.predict(X_test_scaled)
+y_pred_Train_lin_reg = lrrecup.predict(X_train_scaled)
+# jeu d'entraînement
+mae_lin_reg_train = mean_absolute_error(y_train,y_pred_Train_lin_reg)
+mse_lin_reg_train = mean_squared_error(y_train,y_pred_Train_lin_reg,squared=True)
+rmse_lin_reg_train = mean_squared_error(y_train,y_pred_Train_lin_reg,squared=False)
+# jeu de test
+mae_lin_reg_test = mean_absolute_error(y_test,y_pred_Test_lin_reg)
+mse_lin_reg_test = mean_squared_error(y_test,y_pred_Test_lin_reg,squared=True)
+rmse_lin_reg_test = mean_squared_error(y_test,y_pred_Test_lin_reg,squared=False)
+
+y_pred_decision_tree = rdcrecup.predict(X_test_scaled)
+y_pred_train_decision_tree = rdcrecup.predict(X_train_scaled)
+
+# Calcul des métriques pour l'arbre de décision
+# jeu d'entraînement
+mae_decision_tree_train = mean_absolute_error(y_train,y_pred_train_decision_tree)
+mse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=True)
+rmse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=False)
+# jeu de test
+mae_decision_tree_test = mean_absolute_error(y_test,y_pred_decision_tree)
+mse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=True)
+rmse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=False)
+
+# Calcul des métriques pour random forest
+y_pred_random_forest = rrfrecup.predict(X_test_scaled)
+y_pred_random_forest_train = rrfrecup.predict(X_train_scaled)
+# jeu d'entraînement
+mae_random_forest_train = mean_absolute_error(y_train,y_pred_random_forest_train)
+mse_random_forest_train = mean_squared_error(y_train,y_pred_random_forest_train,squared=True)
+rmse_random_forest_train = mean_squared_error(y_train,y_pred_random_forest_train,squared=False)
+# jeu de test
+mae_random_forest_test = mean_absolute_error(y_test,y_pred_random_forest)
+mse_random_forest_test = mean_squared_error(y_test,y_pred_random_forest,squared=True)
+rmse_random_forest_test = mean_squared_error(y_test,y_pred_random_forest,squared=False)
+
+# Calcul des métriques pour GradientBoost
+y_pred_gradientBoost = rgbrecup.predict(X_test_scaled)
+y_pred_gradientBoost_train = rgbrecup.predict(X_train_scaled)
+# jeu d'entraînement
+mae_gradientBoost_train = mean_absolute_error(y_train,y_pred_gradientBoost_train)
+mse_gradientBoost_train = mean_squared_error(y_train,y_pred_gradientBoost_train,squared=True)
+rmse_gradientBoost_train = mean_squared_error(y_train,y_pred_gradientBoost_train,squared=False)
+# jeu de test
+mae_gradientBoost_test = mean_absolute_error(y_test,y_pred_gradientBoost)
+mse_gradientBoost_test = mean_squared_error(y_test,y_pred_gradientBoost,squared=True)
+rmse_gradientBoost_test = mean_squared_error(y_test,y_pred_gradientBoost,squared=False)
+
+# Creation d'un dataframe pour comparer les metriques des deux algorithmes
+data_2 = {'MAE train': [mae_lin_reg_train,mae_decision_tree_train, mae_random_forest_train,mae_gradientBoost_train],
+         'MAE test': [mae_lin_reg_test,mae_decision_tree_test, mae_random_forest_test,mae_gradientBoost_test],
+         'MSE train': [mse_lin_reg_train,mse_decision_tree_train,mse_random_forest_train,mse_gradientBoost_train],
+         'MSE test': [mse_lin_reg_test,mse_decision_tree_test,mse_random_forest_test,mse_gradientBoost_test],
+         'RMSE train': [rmse_lin_reg_train,rmse_decision_tree_train, rmse_random_forest_train,rmse_gradientBoost_train],
+         'RMSE test': [rmse_lin_reg_test,rmse_decision_tree_test, rmse_random_forest_test,rmse_gradientBoost_test]}
+
+  # Creer DataFrame
+metriques = pd.DataFrame(data_2, index = ['Lin Reg','Decision Tree', 'Random Forest ','GradientBoost'])
 
 if page==pages[3] :
-  st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">La modélisation</p>', unsafe_allow_html=True)
+  st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">🤖 La modélisation 🤖</p>', unsafe_allow_html=True)
   st.write("")
   st.write("---")
+  st.markdown("""
+    ##### Nous avons testé quatre modèles :
+      - La régression Linéaire
+      - Le décision tree 
+      - Le random Forest
+      - Le Gradient boost""")
+  st.write("")
   st.markdown('<p style="color:#006A89; font-size:22px;font-weight:bold;text-align:left">La Régression linéaire</p>', unsafe_allow_html=True)
-  # st.write(score_RL_train)
-      # "Le score du model régression linéraire sur Train : ",score_RL_train,"%")
-  st.write("Le score du model régression linéraire sur Test : ",round(Regression_lineaire.score(X_test_scaled,y_test)*100,2),"%")
-  st.write("Plus le coefficient de détermination est proche de 1, plus les données collent à la droite de régression.\n Ici, le score est bon.")
-  st.write('--------------------------------------------------------------------------------------------------------------\n')
-  st.write("---")
-if page==pages[3] :
-   st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Modélisation</p>', unsafe_allow_html=True)
-   st.write('--------------------Nuage de points entre le ladder score réel et le ladder score prédit---------------------\n')
+  st.write("Les scores sont :")
+  st.dataframe(metriques)
+  
+# if page==pages[3] :
+#    st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Modélisation</p>', unsafe_allow_html=True)
+#    st.write('--------------------Nuage de points entre le ladder score réel et le ladder score prédit---------------------\n')
 
 # fig = plt.figure(figsize = (10,10))
 # plt.scatter(y_pred_test_LR,y_test, c='blue')
