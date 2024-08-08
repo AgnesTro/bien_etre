@@ -45,8 +45,9 @@ load_data("world-happiness-report.csv")
 
 @st.cache
 def load_data_2(csvfile):
-  happy_221 = pd.read_csv(csvfile)
+  happy_2021 = pd.read_csv(csvfile)
   return happy_2021
+
 load_data_2('world-happiness-report-2021.csv')
 # fin
 
