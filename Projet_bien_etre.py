@@ -169,8 +169,8 @@ if page == pages[2]:
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
      st.plotly_chart(fig_1, use_container_width=True)
-  st.markdown("""
-    show_text = st.checkbox("Interpertration du box plot")
+  
+  show_text = st.checkbox("Interpertration du box plot")
 # Afficher le texte en fonction de l'état de la case à cocher
   if show_text:
      st.write("On constate que les scores de bien-être les plus élevés sont attribués aux zones Western Europe et North America and ANZ, ce qui correspond à l'hémisphère Nord de la planète.")
