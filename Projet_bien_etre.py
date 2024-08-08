@@ -401,7 +401,7 @@ X_test_scaled = scaler.transform(X_test)
 
 #on récupère les fichiers entrainés
 lrrecup = joblib.load('model_lin_reg.joblib')
-rdcrecup = joblib.load('model_reg_dec_tree.joblib')
+# rdcrecup = joblib.load('model_reg_dec_tree.joblib')
 rrfrecup = joblib.load('model_reg_random_forest.joblib')
 rgbrecup = joblib.load('model_reg_gradient_boost.joblib')
 
@@ -418,18 +418,18 @@ mae_lin_reg_test = mean_absolute_error(y_test,y_pred_Test_lin_reg)
 mse_lin_reg_test = mean_squared_error(y_test,y_pred_Test_lin_reg,squared=True)
 rmse_lin_reg_test = mean_squared_error(y_test,y_pred_Test_lin_reg,squared=False)
 
-y_pred_decision_tree = rdcrecup.predict(X_test_scaled)
-y_pred_train_decision_tree = rdcrecup.predict(X_train_scaled)
+# # Calcul des métriques pour l'arbre de décision
+# y_pred_decision_tree = rdcrecup.predict(X_test_scaled)
+# y_pred_train_decision_tree = rdcrecup.predict(X_train_scaled)
 
-# Calcul des métriques pour l'arbre de décision
-# jeu d'entraînement
-mae_decision_tree_train = mean_absolute_error(y_train,y_pred_train_decision_tree)
-mse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=True)
-rmse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=False)
-# jeu de test
-mae_decision_tree_test = mean_absolute_error(y_test,y_pred_decision_tree)
-mse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=True)
-rmse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=False)
+# # jeu d'entraînement
+# mae_decision_tree_train = mean_absolute_error(y_train,y_pred_train_decision_tree)
+# mse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=True)
+# rmse_decision_tree_train = mean_squared_error(y_train,y_pred_train_decision_tree,squared=False)
+# # jeu de test
+# mae_decision_tree_test = mean_absolute_error(y_test,y_pred_decision_tree)
+# mse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=True)
+# rmse_decision_tree_test = mean_squared_error(y_test,y_pred_decision_tree,squared=False)
 
 # Calcul des métriques pour random forest
 y_pred_random_forest = rrfrecup.predict(X_test_scaled)
