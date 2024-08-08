@@ -26,24 +26,24 @@ page = st_navbar(["Introduction 🤓","Exploration 🔎", "Data Visualisation �
 pages = ["Introduction 🤓","Exploration 🔎", "Data Visualisation 📊", "Modélisation 🤖","Conclusion🎯"]
 alt.themes.enable("dark")
 
-# current_dir = os.path.dirname(__file__)
-# file_path = os.path.join(current_dir,"world-happiness-report.csv")
-# happy = pd.read_csv(file_path)
+current_dir = os.path.dirname(__file__)
+file_path = os.path.join(current_dir,"world-happiness-report.csv")
+happy = pd.read_csv(file_path)
 
-# current_dir = os.path.dirname(__file__)
-# file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
-# happy_2021 = pd.read_csv(file_path)
+current_dir = os.path.dirname(__file__)
+file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
+happy_2021 = pd.read_csv(file_path)
 
-#exemple
-@st.cache
+# #exemple
+# @st.cache
 
-@st.cache_data
-def fetch_and_clean_data(csv):
-    return data
+# @st.cache_data
+# def fetch_and_clean_data(csv):
+#     return data
 
-happy = fetch_and_clean_data("world-happiness-report.csv")
-happy_2021 = fetch_and_clean_data('world-happiness-report-2021.csv')
-# fin
+# happy = fetch_and_clean_data("world-happiness-report.csv")
+# happy_2021 = fetch_and_clean_data('world-happiness-report-2021.csv')
+# # fin
 
 
 if page == pages[0] : 
