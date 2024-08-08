@@ -21,19 +21,29 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 
-
-file_path = ("world-happiness-report.csv")
-happy = pd.read_csv(file_path)
-
-file_path = ("world-happiness-report-2021.csv")
-happy_2021 = pd.read_csv(file_path)
-st.set_page_config(
-  page_title="Projet bien-etre / Juin 2024",
-  page_icon="🌍",
-  layout="wide")
-page = st_navbar(["Introduction 🤓","Exploration 🔎", "Data Visualisation 📊", "Modélisation 🤖"])
-pages = ["Introduction 🤓","Exploration 🔎", "Data Visualisation 📊", "Modélisation 🤖"]
+st.set_page_config(page_title="Projet bien-etre / Juin 2024",page_icon="🌍",layout="wide")
+page = st_navbar(["Introduction 🤓","Exploration 🔎", "Data Visualisation 📊", "Modélisation 🤖","Conclusion🎯"])
+pages = ["Introduction 🤓","Exploration 🔎", "Data Visualisation 📊", "Modélisation 🤖","Conclusion🎯"]
 alt.themes.enable("dark")
+
+# current_dir = os.path.dirname(__file__)
+# file_path = os.path.join(current_dir,"world-happiness-report.csv")
+# happy = pd.read_csv(file_path)
+
+# current_dir = os.path.dirname(__file__)
+# file_path = os.path.join(current_dir,"world-happiness-report-2021.csv")
+# happy_2021 = pd.read_csv(file_path)
+
+#exemple
+@st.cache
+def load_data(csvfile):
+  return df = pd.read_csv(csvfile)
+
+load_data("world-happiness-report.csv")
+load_data('world-happiness-report-2021.csv')
+
+# fin
+
 
 if page == pages[0] : 
   st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Introduction</p>', unsafe_allow_html=True)
@@ -79,6 +89,7 @@ if page == pages[1] :
   if st.checkbox("Afficher les NA de Happy_2021") :
     st.dataframe(happy_2021.isna().sum())
     st.write("Il n'y aura pas de traitement de NA à faire sur happy_2021")
+  st.write("---")
 
 happy_2021.columns = happy_2021.columns.str.replace(" ", "_")
 happy_2021.columns = happy_2021.columns.str.replace(":","")
@@ -91,16 +102,10 @@ happy_2021_drop = happy_2021.drop(["Standard_error_of_ladder_score", "upperwhisk
                                    "Explained_by_Freedom_to_make_life_choices", "Explained_by_Generosity",
                                    "Explained_by_Perceptions_of_corruption", "Dystopia_+_residual"], axis = 1)
 happy_2021_drop["year"] = 2021
-
 happy_drop = happy.drop(["Positive_affect", "Negative_affect"], axis = 1)
-
 happy_concat = pd.concat([happy_drop,happy_2021_drop], axis=0)
-
-
 happy_concat = happy_concat.drop("Regional_indicator", axis = 1)
-
 Regional_indicator = happy_2021_drop.drop(happy_2021_drop.columns[2:], axis = 1)
-
 happy_complet= pd.merge(Regional_indicator, happy_concat, on = ("Country_name"), how = "inner")
 
 if page == pages[1] : 
@@ -111,7 +116,6 @@ if page == pages[1] :
     - Ajustement des colonnes pour ne garder que les colonnes identiques
     - Ajout d'une colonne year à happy_2021 avec poru valeur 2021
     - Ajout d'une colonne Regional_indicator à happy via les valeurs de happy_2021""")
-  
   st.markdown('''<div style="color:#006A89; font-size:24 px;font-weight:bold;">Rassemblement des données : happy_complet</div>''', unsafe_allow_html=True)
   st.write("Premières lignes de happy_complet :")
   st.dataframe(happy_complet.head())
@@ -119,28 +123,30 @@ if page == pages[1] :
   st.write("Description de happy_complet:")
   st.dataframe(happy_complet.describe())
   if st.checkbox("Afficher les doublons de Happy_complet") :
-    st.dataframe(happy_complet.duplicated().sum()) #A corriger
-    st.write("Il n'y a pas de doublon sur happy_complet")
+     st.write("Il n'y a pas de doublon sur happy_complet")
   if st.checkbox("Afficher les NA de Happy_complet") :
     st.dataframe(happy_complet.isna().sum())
     st.write("Il aura un traitement de NA à faire sur happy_complet")
-
-if page == pages[1] : 
+  st.write("---")
   st.markdown('''<div style="color:#006A89; font-size:24 px;font-weight:bold;">Traitement des NAN :</div>''', unsafe_allow_html=True)
   st.write("Dans le souci de perfomance du projet, nous avons décidé de ne pas avoir de fuite de données. Nos NAN seront donc traités avec train_test,split")
   st.write("Nous avons toutefois éliminé les lignes avec plus de 3 NAN")
+
 happy_complet=happy_complet.loc[(happy_complet.isna().sum(axis=1))< 3]
 
 if page == pages[1] : 
   st.markdown('''
               <div style="text-align:center; margin-top: 20px;">
               <a href="/Data Visualisation 📊" style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la visualisation des données</a>
-</div>
-''', unsafe_allow_html=True)
+</div>''', unsafe_allow_html=True)
 
 if page == pages[2]: 
-  st.write("#### Dans un premier temps, nous visualiserons nos valeurs.")
+  st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Exploration graphique des données</p>', unsafe_allow_html=True)
+  st.write("")
+  st.write("")
+  st.write("###### Dans un premier temps, nous visualiserons nos valeurs.")
   # Fonction de création de figure avec titres centrés et taille de police ajustée
+  
   def create_fig(title, color, height, width):
       fig = go.Figure()
       fig.update_layout(
@@ -149,7 +155,6 @@ if page == pages[2]:
           paper_bgcolor='white',
           height=height,
           width=width,
-          margin=dict(l=50, r=50, t=100, b=50),
           xaxis=dict(showline=True, linewidth=2, linecolor='black', showgrid=True, gridcolor='lightgray'),
           yaxis=dict(showline=True, linewidth=2, linecolor='black', showgrid=True, gridcolor='lightgray'))
       return fig
@@ -158,13 +163,14 @@ if page == pages[2]:
   fig_1 = create_fig("Distribution du score de bonheur en fonction des zones géographiques",
       color='blue',
       height=600,
-      width=600)
+      width=400)
   fig_1.add_trace(go.Box(y=happy_complet["Ladder_score"], x=happy_complet["Regional_indicator"], fillcolor='moccasin'))
-  st.plotly_chart(fig_1, use_container_width=True)
-    
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_1, use_container_width=True)
   st.markdown("""
-    <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Explications</h3>""",unsafe_allow_html=True)
-  show_text = st.checkbox("Explication du box plot")
+    <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)
+  show_text = st.checkbox("Interpertration du box plot")
 # Afficher le texte en fonction de l'état de la case à cocher
   if show_text:
      st.write("On constate que les scores de bien-être les plus élevés sont attribués aux zones Western Europe et North America and ANZ, ce qui correspond à l'hémisphère Nord de la planète.")
@@ -185,20 +191,20 @@ if page == pages[2]:
       locationmode='country names',
       color='Ladder_score',
       hover_name='Country_name',
-      title='Life Ladder per country over the years',
       animation_frame='year',
       color_continuous_scale=px.colors.sequential.Plasma,
-      width=1500,
-      height=1000)
+      width=800,
+      height=600)
   fig_2.update_layout(
-      title=dict(text='Life Ladder per country over the years', font=dict(size=24), x=0.5, xanchor='center'),
-      margin=dict(l=50, r=50, t=100, b=50),
+      title=dict(text="Carte du monde représentant l'évolution du ladder score au fil des années", font=dict(size=26), x=0.5, xanchor='center'),
       geo=dict(showcoastlines=True, coastlinecolor="Black", showland=True, landcolor="lightgray"))
-  st.plotly_chart(fig_2, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_2, use_container_width=True)
 
   st.markdown("""
-      <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Explications</h3>""",unsafe_allow_html=True)
-  show_text_2 = st.checkbox("Explication de la carte")
+      <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)
+  show_text_2 = st.checkbox("Interpretation de la carte")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_2:
       st.write("Nous remarquons qu'au fur et à mesure des années, nous disposons de plus de données.")
@@ -206,7 +212,9 @@ if page == pages[2]:
       st.write("A l'exception de l'année 2020 où les données ne sont disponibles que pour 95 pays, quid du Covid ?)")
       st.write("Globalement, les pays ayant des ladder score élevés se situent en Amérique du Nord, en Europe et en Océanie.")
       st.write("A l'inverse, les pays ayant des ladder scores faibles se situent principalement en Afrique et en Asie du Sud.")
-
+   
+   
+  
   # Top 10 Ladder Score
   happy_complet_top10 = happy_complet.groupby('year').apply(lambda x: x.nlargest(10, 'Ladder_score')).reset_index(drop=True)
   fig_3 = px.bar(
@@ -216,11 +224,14 @@ if page == pages[2]:
       animation_frame='year',
       orientation='h',
       title='Top 10 des pays ayant le Ladder_score le plus élevé par année',
-      width=600,
+      width=200,
       height=600)
   fig_3.update_layout(title=dict(text='Top 10 des pays ayant le Ladder_score le plus élevé par année', font=dict(size=24), x=0.5, xanchor='center'))
-  st.plotly_chart(fig_3, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_3, use_container_width=True)
 
+  
   # Flop 10 Ladder Score
   happy_complet_flop10 = happy_complet.groupby('year').apply(lambda x: x.nsmallest(10, 'Ladder_score')).reset_index(drop=True)
   fig_4 = px.bar(
@@ -230,11 +241,13 @@ if page == pages[2]:
       animation_frame='year',
       orientation='h',
       title='Flop 10 des pays ayant le Ladder_score le plus faible par année',
-      width=700,
+      width=200,
       height=600)
   fig_4.update_layout(
       title=dict(text='Flop 10 des pays ayant le Ladder_score le plus faible par année', font=dict(size=24), x=0.5, xanchor='center'))
-  st.plotly_chart(fig_4, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_4, use_container_width=True)
 
   # Top/Flop 10 Ladder Score par région
   happy_complet['Top_Flop'] = np.where(happy_complet['Ladder_score'] >= happy_complet['Ladder_score'].quantile(0.9), 'Top', 'Flop')
@@ -245,18 +258,24 @@ if page == pages[2]:
       color='Top_Flop',
       color_discrete_map={'Top': 'lightblue', 'Flop': 'lightcoral'},
       title='Top/Flop 10 des pays par région en fonction du Ladder Score',
-      width=700,
+      width=200,
       height=600)
   fig_5.update_layout(
       title=dict(text='Top/Flop 10 des pays par région en fonction du Ladder Score', font=dict(size=24), x=0.5, xanchor='center'))
-  st.plotly_chart(fig_5, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_5, use_container_width=True)
 
-  show_text_3 = st.checkbox("### Explication des classements")
+  show_text_3 = st.checkbox("### Interpretation des classements")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_3:
       st.write("Ces graphiques nous permettent de visualiser rapidement les tops et flop au cours des années et de placer géographiquement les résultats obtenus")
 
-  st.write("#### Dans un deuxième temps, nous désirons analyser la corrélation entre nos valeurs.")
+  
+  st.write("")
+  st.write("")
+  st.write("###### Dans un deuxième temps, nous désirons analyser la corrélation entre nos valeurs.")
+
 # Corrélation des données
   corr = happy_complet.select_dtypes('number').corr()
   fig_6 = create_fig("Corrélation des données de happy_complet", color=[0.5, 'red'], height=600, width=800)
@@ -272,10 +291,12 @@ if page == pages[2]:
       texttemplate="%{text:.2f}",
       hoverinfo='z')
   fig_6.add_trace(heatmap)
-  st.plotly_chart(fig_6, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_6, use_container_width=True)
 
-  st.markdown("""<h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Explications</h3>""",unsafe_allow_html=True)  
-  show_text_4 = st.checkbox("### Explication de la heatmap")
+  st.markdown("""<h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)  
+  show_text_4 = st.checkbox("### Interpretation de la heatmap")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_4:
       st.write("Les 2 variables les plus corrélées avec le ladder score sont :")
@@ -294,9 +315,11 @@ if page == pages[2]:
       text=happy_complet.index,
       hoverinfo='text')
   fig_7.add_trace(scatter)
-  st.plotly_chart(fig_7, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_7, use_container_width=True)
 
-  show_text_5 = st.checkbox("### Explication")
+  show_text_5 = st.checkbox("### Interpretation")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_5:
       st.write("Nous observons également un forte corrélation entre les variables explicatives suivantes :")
@@ -350,9 +373,11 @@ if page == pages[2]:
       margin=dict(l=50, r=50, t=100, b=50))
 
   # Affichage avec Streamlit
-  st.plotly_chart(fig_8, use_container_width=True)
+  col1, col2, col3 = st.columns([1, 2, 1])
+  with col2:
+     st.plotly_chart(fig_8, use_container_width=True)
 
-  show_text_6 = st.checkbox("### Explications du subplot")
+  show_text_6 = st.checkbox("### Interpretation du subplot")
     # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_6:
       st.write("La représentation de la corrélation de chaque variable avec le ladder score confirme l'analyse de la heatmap :")
@@ -366,300 +391,334 @@ if page == pages[2] :
               <a href="/Modélisation 🤖 " style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</a>
 </div>''', unsafe_allow_html=True)
 
-happy_model = happy_complet
-# On sépare les données, la cible étant Ladder_score
-feats = happy_model.drop('Ladder_score',axis =1)
-target = happy_model['Ladder_score']
-
-X_train, X_test, y_train, y_test = train_test_split(feats, target, test_size=0.2, random_state = 42)
-
-# # # On commencer par gérer les NANS pour le jeu de données X_train
-
-nan_cor = X_train[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
-countries_cor =nan_cor.Country_name
-for country in countries_cor :
-    countries = X_train.Country_name == country
-    mean_value = X_train.Perceptions_of_corruption.loc[countries].mean()
-    X_train.Perceptions_of_corruption.loc[countries] = X_train.Perceptions_of_corruption.loc[countries].fillna(mean_value)
-nan_cor_2 = X_train[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
-regional_cor =nan_cor_2.Regional_indicator
-for region in regional_cor :
-    region = X_train.Regional_indicator == region
-    mean_value = X_train.Perceptions_of_corruption.loc[region].mean()
-    X_train.Perceptions_of_corruption.loc[region] = X_train.Perceptions_of_corruption.loc[region].fillna(mean_value)
-
-        # Etape GDP :
-nan_GDP=X_train.loc[X_train['Logged_GDP_per_capita'].isna()]
-
-nan_gdp_2 = X_train[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
-
-countries_gdp = nan_gdp_2.Country_name
-
-for country in countries_gdp :
-    countries = X_train.Country_name == country
-    mean_value = X_train.Logged_GDP_per_capita.loc[countries].mean()
-    X_train.Logged_GDP_per_capita.loc[countries] = X_train.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
-
- # Etape freedom :
-nan_free=X_train.loc[X_train['Freedom_to_make_life_choices'].isna()]
-
-nan_free_2 = X_train[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
-
-countries_free =nan_free_2.Country_name
-
-for country in countries_free :
-    countries = X_train.Country_name == country
-    mean_value = X_train.Freedom_to_make_life_choices.loc[countries].mean()
-    X_train.Freedom_to_make_life_choices.loc[countries] = X_train.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
-
-      # Etape social support :
-nan_soc=X_train.loc[X_train['Social_support'].isna()]
-
-nan_soc_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-countries_soc =nan_soc_2.Country_name
-
-for country in countries_soc :
-    countries = X_train.Country_name == country
-    mean_value = X_train.Social_support.loc[countries].mean()
-    X_train.Social_support.loc[countries] = X_train.Social_support.loc[countries].fillna(mean_value)
-
-      # Generosity --> Remplacer par la moyenne
+# happy_model = happy_complet
+# # On sépare les données, la cible étant Ladder_score
+# feats = happy_model.drop('Ladder_score',axis =1)
+# target = happy_model['Ladder_score']
+
+# X_train, X_test, y_train, y_test = train_test_split(feats, target, test_size=0.2, random_state = 42)
+
+# # # # On commencer par gérer les NANS pour le jeu de données X_train
+
+# nan_cor = X_train[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
+# countries_cor =nan_cor.Country_name
+# for country in countries_cor :
+#     countries = X_train.Country_name == country
+#     mean_value = X_train.Perceptions_of_corruption.loc[countries].mean()
+#     X_train.Perceptions_of_corruption.loc[countries] = X_train.Perceptions_of_corruption.loc[countries].fillna(mean_value)
+# nan_cor_2 = X_train[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
+# regional_cor =nan_cor_2.Regional_indicator
+# for region in regional_cor :
+#     region = X_train.Regional_indicator == region
+#     mean_value = X_train.Perceptions_of_corruption.loc[region].mean()
+#     X_train.Perceptions_of_corruption.loc[region] = X_train.Perceptions_of_corruption.loc[region].fillna(mean_value)
+
+#         # Etape GDP :
+# nan_GDP=X_train.loc[X_train['Logged_GDP_per_capita'].isna()]
+
+# nan_gdp_2 = X_train[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
+
+# countries_gdp = nan_gdp_2.Country_name
+
+# for country in countries_gdp :
+#     countries = X_train.Country_name == country
+#     mean_value = X_train.Logged_GDP_per_capita.loc[countries].mean()
+#     X_train.Logged_GDP_per_capita.loc[countries] = X_train.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
+
+#  # Etape freedom :
+# nan_free=X_train.loc[X_train['Freedom_to_make_life_choices'].isna()]
+
+# nan_free_2 = X_train[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
+
+# countries_free =nan_free_2.Country_name
+
+# for country in countries_free :
+#     countries = X_train.Country_name == country
+#     mean_value = X_train.Freedom_to_make_life_choices.loc[countries].mean()
+#     X_train.Freedom_to_make_life_choices.loc[countries] = X_train.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
+
+#       # Etape social support :
+# nan_soc=X_train.loc[X_train['Social_support'].isna()]
+
+# nan_soc_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
+
+# countries_soc =nan_soc_2.Country_name
+
+# for country in countries_soc :
+#     countries = X_train.Country_name == country
+#     mean_value = X_train.Social_support.loc[countries].mean()
+#     X_train.Social_support.loc[countries] = X_train.Social_support.loc[countries].fillna(mean_value)
+
+#       # Generosity --> Remplacer par la moyenne
 
-nan_gen=X_train.loc[X_train['Generosity'].isna()]
-
-nan_gen_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-countries_gen =nan_gen_2.Country_name
-
-for country in countries_gen :
-    countries = X_train.Country_name == country
-    mean_value = X_train.Generosity.loc[countries].mean()
-    X_train.Generosity.loc[countries] = X_train.Generosity.loc[countries].fillna(mean_value)
+# nan_gen=X_train.loc[X_train['Generosity'].isna()]
+
+# nan_gen_2 = X_train[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
+
+# countries_gen =nan_gen_2.Country_name
+
+# for country in countries_gen :
+#     countries = X_train.Country_name == country
+#     mean_value = X_train.Generosity.loc[countries].mean()
+#     X_train.Generosity.loc[countries] = X_train.Generosity.loc[countries].fillna(mean_value)
 
-    # Healthy_life_expectancy
+#     # Healthy_life_expectancy
 
-# Recherche des NAN pour Healthy_life_expectancy
-NAN_life = X_train.loc[X_train["Healthy_life_expectancy"].isna()]
+# # Recherche des NAN pour Healthy_life_expectancy
+# NAN_life = X_train.loc[X_train["Healthy_life_expectancy"].isna()]
 
-data_to_fill_HK = [
-    (2006, 82.38),
-    (2008, 82.34),
-    (2009, 82.78),
-    (2010, 82.96),
-    (2011,83.41),
-    (2012,83.45),
-    (2014,83.94),
-    (2016,84.21),
-    (2017,84.70),
-    (2019,85.16)]
+# data_to_fill_HK = [
+#     (2006, 82.38),
+#     (2008, 82.34),
+#     (2009, 82.78),
+#     (2010, 82.96),
+#     (2011,83.41),
+#     (2012,83.45),
+#     (2014,83.94),
+#     (2016,84.21),
+#     (2017,84.70),
+#     (2019,85.16)]
 
-country_name = 'Hong Kong S.A.R. of China'
-for year, value in data_to_fill_HK:
-  X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
+# country_name = 'Hong Kong S.A.R. of China'
+# for year, value in data_to_fill_HK:
+#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
 
-data_to_fill_Kosovo = [
-    (2007,69.20),
-    (2008,69.35),
-    (2009,69.65),
-    (2010,69.90),
-    (2011,70.15),
-    (2012,70.50),
-    (2013,70.80),
-    (2014,71.10),
-    (2015,71.35),
-    (2016,71.65),
-    (2017,71.95),
-    (2018,72.20),
-    (2019,72.20)]
+# data_to_fill_Kosovo = [
+#     (2007,69.20),
+#     (2008,69.35),
+#     (2009,69.65),
+#     (2010,69.90),
+#     (2011,70.15),
+#     (2012,70.50),
+#     (2013,70.80),
+#     (2014,71.10),
+#     (2015,71.35),
+#     (2016,71.65),
+#     (2017,71.95),
+#     (2018,72.20),
+#     (2019,72.20)]
 
-# Pas de valeurs trouvée pour 2019; remplacer par 2018
+# # Pas de valeurs trouvée pour 2019; remplacer par 2018
 
-country_name = 'Kosovo'
-for year, value in data_to_fill_Kosovo:
-  X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
+# country_name = 'Kosovo'
+# for year, value in data_to_fill_Kosovo:
+#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
 
-data_to_fill_Palestine = [
-    (2011,73.24),
-    (2012,73.47),
-    (2013,74.03),
-    (2014,72.62),
-    (2015,74.41),
-    (2016,74.55),
-    (2017,74.83)]
+# data_to_fill_Palestine = [
+#     (2011,73.24),
+#     (2012,73.47),
+#     (2013,74.03),
+#     (2014,72.62),
+#     (2015,74.41),
+#     (2016,74.55),
+#     (2017,74.83)]
 
-country_name = 'Palestinian Territories'
-for year, value in data_to_fill_Palestine:
-  X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
+# country_name = 'Palestinian Territories'
+# for year, value in data_to_fill_Palestine:
+#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
 
-data_to_fill_Taiwan = [
-    (2011,78.3),
-    (2012,78.3),
-    (2013,79),
-    (2014,79.5),
-    (2015,80.20),
-    (2016,80.5),
-    (2017,80.5)]
+# data_to_fill_Taiwan = [
+#     (2011,78.3),
+#     (2012,78.3),
+#     (2013,79),
+#     (2014,79.5),
+#     (2015,80.20),
+#     (2016,80.5),
+#     (2017,80.5)]
 
-country_name = 'Taiwan Province of China'
-for year, value in data_to_fill_Taiwan:
-  X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
+# country_name = 'Taiwan Province of China'
+# for year, value in data_to_fill_Taiwan:
+#   X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)] = X_train.Healthy_life_expectancy.loc[(X_train.Country_name == country_name) & (X_train.year == year)].fillna(value)
 
-# On recommence le meme processus avec X_test
+# # On recommence le meme processus avec X_test
 
-# # CORRUPTION :
+# # # CORRUPTION :
 
- # Remplacement des Nan par la moyenne
-# Nous allons utiliser la moyenne des autres années pour le même pays ou la moyenne de la région pour les pays sans données.
+#  # Remplacement des Nan par la moyenne
+# # Nous allons utiliser la moyenne des autres années pour le même pays ou la moyenne de la région pour les pays sans données.
 
-nan_cor_2 = X_test[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
+# nan_cor_2 = X_test[['Country_name','Perceptions_of_corruption']].groupby(['Country_name']).mean().reset_index()
 
-countries_cor =nan_cor_2.Country_name
+# countries_cor =nan_cor_2.Country_name
 
-for country in countries_cor :
-    countries = X_test.Country_name == country
-    mean_value = X_test.Perceptions_of_corruption.loc[countries].mean()
-    X_test.Perceptions_of_corruption.loc[countries] = X_test.Perceptions_of_corruption.loc[countries].fillna(mean_value)
-
-nan_cor_2 = X_test[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
-
-regional_cor =nan_cor_2.Regional_indicator
-
-for region in regional_cor :
-    region = X_test.Regional_indicator == region
-    mean_value = X_test.Perceptions_of_corruption.loc[region].mean()
-    X_test.Perceptions_of_corruption.loc[region] = X_test.Perceptions_of_corruption.loc[region].fillna(mean_value)
+# for country in countries_cor :
+#     countries = X_test.Country_name == country
+#     mean_value = X_test.Perceptions_of_corruption.loc[countries].mean()
+#     X_test.Perceptions_of_corruption.loc[countries] = X_test.Perceptions_of_corruption.loc[countries].fillna(mean_value)
+
+# nan_cor_2 = X_test[['Regional_indicator','Perceptions_of_corruption']].groupby(['Regional_indicator']).mean().reset_index()
+
+# regional_cor =nan_cor_2.Regional_indicator
+
+# for region in regional_cor :
+#     region = X_test.Regional_indicator == region
+#     mean_value = X_test.Perceptions_of_corruption.loc[region].mean()
+#     X_test.Perceptions_of_corruption.loc[region] = X_test.Perceptions_of_corruption.loc[region].fillna(mean_value)
 
- # Etape GDP :
-nan_GDP=X_test.loc[X_test['Logged_GDP_per_capita'].isna()]
-
-nan_gdp_2 = X_test[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
-
-countries_gdp = nan_gdp_2.Country_name
-
-for country in countries_gdp :
-    countries = X_test.Country_name == country
-    mean_value = X_test.Logged_GDP_per_capita.loc[countries].mean()
-    X_test.Logged_GDP_per_capita.loc[countries] = X_test.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
-
-
-# Etape freedom :
-nan_free=X_test.loc[X_test['Freedom_to_make_life_choices'].isna()]
-
-nan_free_2 = X_test[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
-
-countries_free =nan_free_2.Country_name
-
-for country in countries_free :
-    countries = X_test.Country_name == country
-    mean_value = X_test.Freedom_to_make_life_choices.loc[countries].mean()
-    X_test.Freedom_to_make_life_choices.loc[countries] = X_test.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
-
- # Etape social support :
-nan_soc=X_test.loc[X_test['Social_support'].isna()]
-
-nan_soc_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-countries_soc =nan_soc_2.Country_name
-
-for country in countries_soc :
-    countries = X_test.Country_name == country
-    mean_value = X_test.Social_support.loc[countries].mean()
-    X_test.Social_support.loc[countries] = X_test.Social_support.loc[countries].fillna(mean_value)
-
-data_to_fill_Maroc = [
-    (2008,0.621),
-    (2010,0.621),
-    (2012,0.631)]
-
-country_name = 'Morocco'
-for year, value in data_to_fill_Maroc:
-  X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-# Generosity --> Remplacer par la moyenne
-nan_gen=X_test.loc[X_test['Generosity'].isna()]
-nan_gen_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
-
-countries_gen =nan_gen_2.Country_name
-
-for country in countries_gen :
-    countries = X_test.Country_name == country
-    mean_value = X_test.Generosity.loc[countries].mean()
-    X_test.Generosity.loc[countries] = X_test.Generosity.loc[countries].fillna(mean_value)
-
- # Healthy_life_expectancy
-
-# Recherche des NAN pour Healthy_life_expectancy
-NAN_life = X_test.loc[X_test["Healthy_life_expectancy"].isna()]
-
-data_to_fill_HK = [
-    (2006, 82.38),
-    (2008, 82.34),
-    (2009, 82.78),
-    (2010, 82.96),
-    (2011,83.41),
-    (2012,83.45),
-    (2014,83.94),
-    (2016,84.21),
-    (2017,84.70),
-    (2019,85.16)]
-
-country_name = 'Hong Kong S.A.R. of China'
-for year, value in data_to_fill_HK:
-  X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-data_to_fill_Kosovo = [
-    (2007,69.20),
-    (2008,69.35),
-    (2009,69.65),
-    (2010,69.90),
-    (2011,70.15),
-    (2012,70.50),
-    (2013,70.80),
-    (2014,71.10),
-    (2015,71.35),
-    (2016,71.65),
-    (2017,71.95),
-    (2018,72.20),
-    (2019,72.20)]
-
-# Pas de valeurs trouvée pour 2019; remplacer par 2018
-
-country_name = 'Kosovo'
-for year, value in data_to_fill_Kosovo:
-  X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-data_to_fill_Palestine = [
-    (2011,73.24),
-    (2012,73.47),
-    (2013,74.03),
-    (2014,72.62),
-    (2015,74.41),
-    (2016,74.55),
-    (2017,74.83)]
-
-country_name = 'Palestinian Territories'
-for year, value in data_to_fill_Palestine:
-  X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-data_to_fill_Taiwan = [
-    (2011,78.3),
-    (2012,78.3),
-    (2013,79),
-    (2014,79.5),
-     (2015,80.20),
-      (2016,80.5),
-    (2017,80.5)]
-
-country_name = 'Taiwan Province of China'
-for year, value in data_to_fill_Taiwan:
-  X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
-
-X_train=X_train.drop(['Country_name','Regional_indicator'],axis=1)
-X_test=X_test.drop(['Country_name','Regional_indicator'],axis=1)
-
-# standardisation des données
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
-
+#  # Etape GDP :
+# nan_GDP=X_test.loc[X_test['Logged_GDP_per_capita'].isna()]
+
+# nan_gdp_2 = X_test[['Country_name','Logged_GDP_per_capita']].groupby(['Country_name']).mean().reset_index()
+
+# countries_gdp = nan_gdp_2.Country_name
+
+# for country in countries_gdp :
+#     countries = X_test.Country_name == country
+#     mean_value = X_test.Logged_GDP_per_capita.loc[countries].mean()
+#     X_test.Logged_GDP_per_capita.loc[countries] = X_test.Logged_GDP_per_capita.loc[countries].fillna(mean_value)
+
+
+# # Etape freedom :
+# nan_free=X_test.loc[X_test['Freedom_to_make_life_choices'].isna()]
+
+# nan_free_2 = X_test[['Country_name','Freedom_to_make_life_choices']].groupby(['Country_name']).mean().reset_index()
+
+# countries_free =nan_free_2.Country_name
+
+# for country in countries_free :
+#     countries = X_test.Country_name == country
+#     mean_value = X_test.Freedom_to_make_life_choices.loc[countries].mean()
+#     X_test.Freedom_to_make_life_choices.loc[countries] = X_test.Freedom_to_make_life_choices.loc[countries].fillna(mean_value)
+
+#  # Etape social support :
+# nan_soc=X_test.loc[X_test['Social_support'].isna()]
+
+# nan_soc_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
+
+# countries_soc =nan_soc_2.Country_name
+
+# for country in countries_soc :
+#     countries = X_test.Country_name == country
+#     mean_value = X_test.Social_support.loc[countries].mean()
+#     X_test.Social_support.loc[countries] = X_test.Social_support.loc[countries].fillna(mean_value)
+
+# data_to_fill_Maroc = [
+#     (2008,0.621),
+#     (2010,0.621),
+#     (2012,0.631)]
+
+# country_name = 'Morocco'
+# for year, value in data_to_fill_Maroc:
+#   X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Social_support.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
+
+# # Generosity --> Remplacer par la moyenne
+# nan_gen=X_test.loc[X_test['Generosity'].isna()]
+# nan_gen_2 = X_test[['Country_name','Social_support']].groupby(['Country_name']).mean().reset_index()
+
+# countries_gen =nan_gen_2.Country_name
+
+# for country in countries_gen :
+#     countries = X_test.Country_name == country
+#     mean_value = X_test.Generosity.loc[countries].mean()
+#     X_test.Generosity.loc[countries] = X_test.Generosity.loc[countries].fillna(mean_value)
+
+#  # Healthy_life_expectancy
+
+# # Recherche des NAN pour Healthy_life_expectancy
+# NAN_life = X_test.loc[X_test["Healthy_life_expectancy"].isna()]
+
+# data_to_fill_HK = [
+#     (2006, 82.38),
+#     (2008, 82.34),
+#     (2009, 82.78),
+#     (2010, 82.96),
+#     (2011,83.41),
+#     (2012,83.45),
+#     (2014,83.94),
+#     (2016,84.21),
+#     (2017,84.70),
+#     (2019,85.16)]
+
+# country_name = 'Hong Kong S.A.R. of China'
+# for year, value in data_to_fill_HK:
+#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
+
+# data_to_fill_Kosovo = [
+#     (2007,69.20),
+#     (2008,69.35),
+#     (2009,69.65),
+#     (2010,69.90),
+#     (2011,70.15),
+#     (2012,70.50),
+#     (2013,70.80),
+#     (2014,71.10),
+#     (2015,71.35),
+#     (2016,71.65),
+#     (2017,71.95),
+#     (2018,72.20),
+#     (2019,72.20)]
+
+# # Pas de valeurs trouvée pour 2019; remplacer par 2018
+
+# country_name = 'Kosovo'
+# for year, value in data_to_fill_Kosovo:
+#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
+
+# data_to_fill_Palestine = [
+#     (2011,73.24),
+#     (2012,73.47),
+#     (2013,74.03),
+#     (2014,72.62),
+#     (2015,74.41),
+#     (2016,74.55),
+#     (2017,74.83)]
+
+# country_name = 'Palestinian Territories'
+# for year, value in data_to_fill_Palestine:
+#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
+
+# data_to_fill_Taiwan = [
+#     (2011,78.3),
+#     (2012,78.3),
+#     (2013,79),
+#     (2014,79.5),
+#      (2015,80.20),
+#       (2016,80.5),
+#     (2017,80.5)]
+
+# country_name = 'Taiwan Province of China'
+# for year, value in data_to_fill_Taiwan:
+#   X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)] = X_test.Healthy_life_expectancy.loc[(X_test.Country_name == country_name) & (X_test.year == year)].fillna(value)
+
+# X_train=X_train.drop(['Country_name','Regional_indicator'],axis=1)
+# X_test=X_test.drop(['Country_name','Regional_indicator'],axis=1)
+
+# # standardisation des données
+# scaler = StandardScaler()
+# X_train_scaled = scaler.fit_transform(X_train)
+# X_test_scaled = scaler.transform(X_test)
+
+def charger_modele():
+    # Charger le modèle à partir du fichier Pickle
+    with open('Regression_lineaire.pkl', 'rb') as fichier_modele:
+        Regression_lineaire = pickle.load(fichier_modele)
+    return Regression_lineaire
+
+if page==pages[3] :
+  st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">La modélisation</p>', unsafe_allow_html=True)
+  st.write("")
+  st.write("---")
+  st.markdown('<p style="color:#006A89; font-size:22px;font-weight:bold;text-align:left">La Régression linéaire</p>', unsafe_allow_html=True)
+  # st.write(score_RL_train)
+      # "Le score du model régression linéraire sur Train : ",score_RL_train,"%")
+  st.write("Le score du model régression linéraire sur Test : ",round(Regression_lineaire.score(X_test_scaled,y_test)*100,2),"%")
+  st.write("Plus le coefficient de détermination est proche de 1, plus les données collent à la droite de régression.\n Ici, le score est bon.")
+  st.write('--------------------------------------------------------------------------------------------------------------\n')
+  st.write("---")
+if page==pages[3] :
+   st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Modélisation</p>', unsafe_allow_html=True)
+   st.write('--------------------Nuage de points entre le ladder score réel et le ladder score prédit---------------------\n')
+
+# fig = plt.figure(figsize = (10,10))
+# plt.scatter(y_pred_test_LR,y_test, c='blue')
+# plt.plot((y_test.min(), y_test.max()), (y_test.min(), y_test.max()), color = 'black')
+# plt.xlabel("Prediction")
+# plt.ylabel("Vrai valeur")
+# plt.title('Régression Linéaire pour la prédiction du ladder score')
+# plt.show()
+# print("\n On observe que le Ladder score est assez bien prédit")
+# st.write("La courbe de régression ests :")
+
+if page == pages[4] : 
+  st.markdown('<p style="color:#006A89; font-size:30px;font-weight:bold;text-align:center">Conclusion</p>', unsafe_allow_html=True)
+  
