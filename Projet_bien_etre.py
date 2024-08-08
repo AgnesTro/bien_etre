@@ -1,30 +1,27 @@
-# import streamlit as st
-# import pandas as pd
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-# import os
-# import plotly.graph_objects as go
-# from sklearn.ensemble import RandomForestClassifier
-# from sklearn.svm import SVC
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.metrics import confusion_matrix
-# import joblib
-# import pickle
-# import plotly.express as px
-# import altair as alt
-# import streamlit as st
-# from streamlit_navigation_bar import st_navbar
-# from plotly.subplots import make_subplots
-# from sklearn.model_selection import train_test_split
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.metrics import mean_squared_error
-# from sklearn.metrics import mean_absolute_error
-conda create streamlit python=3.7 pip
-pip install streamlit
-pip install matplotlib
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+import plotly.graph_objects as go
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+import joblib
+import pickle
+import plotly.express as px
+import altair as alt
+import streamlit as st
+from streamlit_navigation_bar import st_navbar
+from plotly.subplots import make_subplots
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
 
-requirements.txt 
+
 file_path = ("world-happiness-report.csv")
 happy = pd.read_csv(file_path)
 
