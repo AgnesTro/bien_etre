@@ -36,19 +36,13 @@ alt.themes.enable("dark")
 
 #exemple
 @st.cache
-def load_data(csvfile):
-  happy = pd.read_csv(csvfile)
-  return happy 
 
-load_data("world-happiness-report.csv")
+@st.cache_data
+def fetch_and_clean_data(csv):
+    return data
 
-
-@st.cache
-def load_data_2(csvfile):
-  happy_2021 = pd.read_csv(csvfile)
-  return happy_2021
-
-load_data_2('world-happiness-report-2021.csv')
+happy = fetch_and_clean_data("world-happiness-report.csv")
+happy_2021 = fetch_and_clean_data('world-happiness-report-2021.csv')
 # fin
 
 
