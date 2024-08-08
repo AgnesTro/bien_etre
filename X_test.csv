@@ -1,0 +1,404 @@
+Country_name,Regional_indicator,year,Logged_GDP_per_capita,Social_support,Healthy_life_expectancy,Freedom_to_make_life_choices,Generosity,Perceptions_of_corruption
+Israel,Middle East and North Africa,2015,10.536,0.864,72.7,0.753,0.108,0.789
+Ireland,Western Europe,2010,10.879,0.973,71.5,0.856,0.348,0.618
+Bahrain,Middle East and North Africa,2009,10.709,0.904,65.94,0.896,0.037,0.506
+Sri Lanka,South Asia,2017,9.44,0.823,67.0,0.827,0.094,0.844
+South Africa,Sub-Saharan Africa,2010,9.43,0.917,50.5,0.739,-0.202,0.791
+El Salvador,Latin America and Caribbean,2019,9.08,0.764,66.4,0.877,-0.109,0.682
+Mozambique,Sub-Saharan Africa,2015,7.141,0.666,51.2,0.813,0.089,0.632
+Mauritania,Sub-Saharan Africa,2010,8.47,0.857,54.5,0.669,0.055,0.727
+Japan,East Asia,2020,10.58,0.887,75.2,0.806,-0.259,0.609
+Zimbabwe,Sub-Saharan Africa,2010,7.729,0.857,46.7,0.665,-0.093,0.828
+Kazakhstan,Commonwealth of Independent States,2019,10.179,0.951,65.2,0.852,-0.055,0.708
+Finland,Western Europe,2017,10.768,0.964,71.8,0.962,-0.002,0.192
+Liberia,Sub-Saharan Africa,2016,7.324,0.643,54.5,0.763,0.033,0.901
+Chad,Sub-Saharan Africa,2018,7.363,0.577,48.2,0.65,0.024,0.763
+Croatia,Central and Eastern Europe,2014,10.072,0.646,68.3,0.519,0.132,0.918
+Dominican Republic,Latin America and Caribbean,2011,9.475,0.872,64.02,0.848,0.014,0.788
+Cameroon,Sub-Saharan Africa,2015,8.149,0.646,50.3,0.791,0.049,0.868
+Sri Lanka,South Asia,2007,8.97,0.838,65.86,0.736,0.11,0.847
+Nepal,South Asia,2017,8.039,0.816,62.4,0.845,0.134,0.77
+Poland,Central and Eastern Europe,2010,10.085,0.955,67.3,0.795,0.002,0.905
+Bahrain,Middle East and North Africa,2020,10.62,0.848,69.7,0.945,0.132,0.5529999999999999
+Germany,Western Europe,2021,10.873,0.903,72.5,0.875,0.011,0.46
+Namibia,Sub-Saharan Africa,2014,9.232,0.763,55.16,0.849,-0.183,0.79
+Slovenia,Central and Eastern Europe,2015,10.433,0.901,70.2,0.896,0.008,0.892
+Mozambique,Sub-Saharan Africa,2019,7.155,0.742,55.2,0.87,0.073,0.682
+Afghanistan,South Asia,2016,7.697,0.559,53.0,0.523,0.042,0.793
+United States,North America and ANZ,2017,11.001,0.921,68.4,0.868,0.197,0.681
+China,East Asia,2020,9.702,0.808,69.9,0.891,-0.103,0.6
+Uganda,Sub-Saharan Africa,2010,7.528,0.83,50.4,0.801,-0.015,0.855
+Palestinian Territories,Middle East and North Africa,2021,8.485,0.826,62.25,0.653,-0.163,0.821
+Pakistan,South Asia,2014,8.336,0.552,57.08,0.543,0.14,0.677
+Pakistan,South Asia,2019,8.453,0.617,58.9,0.685,0.124,0.776
+Uzbekistan,Commonwealth of Independent States,2006,8.193,0.903,61.44,0.784,-0.115,0.609
+Lebanon,Middle East and North Africa,2010,9.878,0.721,65.2,0.678,0.073,0.949
+Bulgaria,Central and Eastern Europe,2017,9.969,0.942,66.6,0.689,-0.154,0.911
+Bahrain,Middle East and North Africa,2012,10.716,0.911,66.86,0.682,0.064,0.438
+India,South Asia,2012,8.428,0.511,58.0,0.609,0.067,0.83
+Slovenia,Central and Eastern Europe,2006,10.403,0.936,68.0,0.936,0.043,0.708
+Hong Kong S.A.R. of China,East Asia,2010,10.847,0.857,82.96,0.89,0.332,0.256
+Malta,Western Europe,2011,10.37,0.923,71.72,0.882,0.296,0.67
+United Kingdom,Western Europe,2011,10.657,0.949,71.38,0.9,0.336,0.438
+El Salvador,Latin America and Caribbean,2008,8.908,0.747,63.56,0.636,-0.078,0.735
+Vietnam,Southeast Asia,2006,8.335,0.888,65.86,0.886,0.015,0.7893999999999999
+Ukraine,Commonwealth of Independent States,2011,9.431,0.859,62.5,0.579,-0.228,0.933
+Hungary,Central and Eastern Europe,2011,10.127,0.894,65.76,0.631,-0.089,0.94
+Niger,Sub-Saharan Africa,2008,6.918,0.607,47.88,0.649,-0.055,0.749
+Mali,Sub-Saharan Africa,2018,7.733,0.692,51.7,0.737,-0.034,0.793
+Canada,North America and ANZ,2009,10.697,0.943,72.02,0.915,0.246,0.413
+South Africa,Sub-Saharan Africa,2020,9.332,0.891,57.3,0.757,-0.015,0.912
+Bangladesh,South Asia,2018,8.399,0.706,64.3,0.901,-0.043,0.701
+Ghana,Sub-Saharan Africa,2020,8.59,0.643,58.0,0.824,0.2,0.847
+Burkina Faso,Sub-Saharan Africa,2019,7.691,0.683,54.4,0.678,-0.004,0.729
+Netherlands,Western Europe,2018,10.941,0.939,72.3,0.92,0.161,0.371
+Bahrain,Middle East and North Africa,2010,10.706,0.877,66.3,0.862,-0.001,0.715
+Spain,Western Europe,2016,10.56,0.942,73.8,0.768,-0.048,0.819
+Lesotho,Sub-Saharan Africa,2017,7.931,0.769,47.3,0.757,-0.145,0.797
+Cyprus,Western Europe,2006,10.566,0.878,71.44,0.836,0.018,0.712
+Indonesia,Southeast Asia,2008,8.943,0.675,60.12,0.596,0.164,0.968
+Zimbabwe,Sub-Saharan Africa,2014,7.991,0.766,52.38,0.642,-0.074,0.82
+Lithuania,Central and Eastern Europe,2014,10.306,0.908,65.3,0.508,-0.263,0.956
+Uganda,Sub-Saharan Africa,2006,7.37,0.76,46.48,0.747,-0.041,0.807
+Egypt,Middle East and North Africa,2019,9.373,0.772,62.0,0.774,-0.199,0.7935
+Uzbekistan,Commonwealth of Independent States,2018,8.818,0.921,65.1,0.97,0.318,0.52
+Gabon,Sub-Saharan Africa,2015,9.649,0.756,58.2,0.671,-0.194,0.867
+Turkmenistan,Commonwealth of Independent States,2016,9.515,0.929,61.4,0.749,0.005,0.888
+Jordan,Middle East and North Africa,2009,9.347,0.899,64.46,0.771,-0.075,0.739
+Pakistan,South Asia,2013,8.311,0.607,56.86,0.448,0.1,0.792
+Mexico,Latin America and Caribbean,2019,9.891,0.852,68.6,0.903,-0.141,0.809
+Botswana,Sub-Saharan Africa,2006,9.492,0.883,46.82,0.824,-0.195,0.723
+Egypt,Middle East and North Africa,2009,9.213,0.744,59.94,0.611,-0.1,0.801
+Sierra Leone,Sub-Saharan Africa,2019,7.449,0.611,52.4,0.718,0.074,0.874
+United Arab Emirates,Middle East and North Africa,2013,11.001,0.864,66.46,0.936,0.074,0.589
+Yemen,Middle East and North Africa,2016,7.715,0.775,55.1,0.533,-0.151,0.754
+Croatia,Central and Eastern Europe,2021,10.217,0.924,70.799,0.754,-0.118,0.939
+United States,North America and ANZ,2016,10.986,0.897,68.5,0.758,0.144,0.739
+France,Western Europe,2017,10.711,0.931,73.6,0.834,-0.123,0.601
+Uzbekistan,Commonwealth of Independent States,2016,8.756,0.945,64.5,0.984,0.208,0.5316000000000001
+Romania,Central and Eastern Europe,2014,10.041,0.753,66.08,0.754,-0.1,0.958
+New Zealand,North America and ANZ,2011,10.536,0.954,72.12,0.935,0.284,0.269
+Ukraine,Commonwealth of Independent States,2009,9.332,0.845,61.68,0.46,-0.241,0.962
+Croatia,Central and Eastern Europe,2017,10.189,0.77,69.6,0.716,-0.104,0.892
+Chad,Sub-Saharan Africa,2010,7.457,0.734,45.1,0.505,0.025,0.858
+Nepal,South Asia,2016,7.973,0.837,61.3,0.839,0.168,0.817
+Philippines,Southeast Asia,2015,8.896,0.854,61.6,0.912,-0.051,0.755
+Azerbaijan,Commonwealth of Independent States,2018,9.562,0.781,65.5,0.772,-0.232,0.561
+Mali,Sub-Saharan Africa,2006,7.593,0.761,45.92,0.555,-0.072,0.761
+Iraq,Middle East and North Africa,2015,9.241,0.684,58.4,0.599,0.019,0.762
+Turkmenistan,Commonwealth of Independent States,2011,9.182,0.964,60.04,0.813,0.018,0.888
+Tajikistan,Commonwealth of Independent States,2014,7.911,0.81,63.04,0.853,0.002,0.698
+Vietnam,Southeast Asia,2016,8.82,0.876,67.5,0.894,-0.09,0.799
+Philippines,Southeast Asia,2016,8.95,0.821,61.7,0.908,-0.071,0.792
+Togo,Sub-Saharan Africa,2021,7.362,0.569,54.914,0.619,0.032,0.772
+Colombia,Latin America and Caribbean,2011,9.442,0.904,65.92,0.811,-0.073,0.847
+Liberia,Sub-Saharan Africa,2019,7.264,0.712,56.9,0.706,0.051,0.828
+Norway,Western Europe,2021,11.053,0.954,73.3,0.96,0.093,0.27
+Denmark,Western Europe,2012,10.846,0.951,70.84,0.933,0.139,0.187
+Kosovo,Central and Eastern Europe,2015,9.182,0.805,71.35,0.561,0.181,0.851
+Bangladesh,South Asia,2019,8.467,0.673,64.8,0.902,-0.051,0.656
+Brazil,Latin America and Caribbean,2012,9.647,0.89,65.02,0.849,-0.11175,0.623
+Ghana,Sub-Saharan Africa,2015,8.449,0.687,56.0,0.852,-0.038,0.945
+Botswana,Sub-Saharan Africa,2017,9.756,0.768,58.2,0.817,-0.248,0.731
+Myanmar,Southeast Asia,2018,8.523,0.774,59.0,0.906,0.49,0.647
+Georgia,Commonwealth of Independent States,2012,9.332,0.533,64.92,0.659,-0.269,0.321
+Kenya,Sub-Saharan Africa,2016,8.282,0.706,58.9,0.749,0.298,0.828
+Singapore,Southeast Asia,2021,11.488,0.915,76.953,0.927,-0.018,0.082
+Haiti,Latin America and Caribbean,2014,7.477,0.554,50.54,0.509,0.285,0.708
+Bangladesh,South Asia,2010,7.967,0.549,60.7,0.659,-0.016,0.774
+Vietnam,Southeast Asia,2007,8.394,0.856,66.02,0.918,0.089,0.754
+Romania,Central and Eastern Europe,2016,10.136,0.809,66.6,0.822,-0.115,0.949
+Egypt,Middle East and North Africa,2021,9.367,0.75,61.998,0.749,-0.182,0.795
+Sweden,Western Europe,2016,10.861,0.912,72.4,0.918,0.146,0.246
+Saudi Arabia,Middle East and North Africa,2013,10.776,0.827,65.0,0.661,-0.081,0.508
+Poland,Central and Eastern Europe,2013,10.164,0.912,67.78,0.776,-0.137,0.916
+Azerbaijan,Commonwealth of Independent States,2009,9.534,0.736,63.02,0.498,-0.087,0.754
+Zambia,Sub-Saharan Africa,2020,8.117,0.767,56.3,0.75,0.056,0.81
+Latvia,Central and Eastern Europe,2016,10.211,0.917,66.2,0.685,-0.156,0.868
+Zimbabwe,Sub-Saharan Africa,2008,7.461,0.843,44.14,0.344,-0.09,0.964
+Hungary,Central and Eastern Europe,2019,10.393,0.947,68.0,0.798,-0.195,0.884
+Lithuania,Central and Eastern Europe,2016,10.373,0.938,66.1,0.614,-0.266,0.949
+Kyrgyzstan,Commonwealth of Independent States,2015,8.477,0.857,63.2,0.813,0.2,0.858
+Armenia,Commonwealth of Independent States,2009,9.111,0.68,65.1,0.441,-0.214,0.882
+Kosovo,Central and Eastern Europe,2021,9.318,0.821,63.813,0.869,0.257,0.917
+Kenya,Sub-Saharan Africa,2019,8.373,0.676,60.7,0.818,0.31,0.794
+Iraq,Middle East and North Africa,2014,9.25,0.725,58.64,0.646,-0.001,0.726
+Italy,Western Europe,2020,10.563,0.89,74.0,0.718,-0.15,0.844
+Uruguay,Latin America and Caribbean,2020,9.937,0.921,69.2,0.908,-0.084,0.491
+Canada,North America and ANZ,2008,10.738,0.939,71.84,0.926,0.262,0.37
+Romania,Central and Eastern Europe,2018,10.26,0.818,67.2,0.845,-0.217,0.921
+Uganda,Sub-Saharan Africa,2012,7.592,0.885,52.04,0.649,0.081,0.838
+Serbia,Central and Eastern Europe,2014,9.627,0.783,66.84,0.532,0.072,0.912
+Denmark,Western Europe,2016,10.903,0.954,71.8,0.948,0.138,0.21
+Saudi Arabia,Middle East and North Africa,2008,10.722,0.823,64.04,0.532,-0.022,0.508
+Chad,Sub-Saharan Africa,2008,7.356,0.571,44.14,0.527,0.063,0.944
+Bahrain,Middle East and North Africa,2016,10.781,0.863,68.1,0.889,0.088,0.5529999999999999
+Moldova,Commonwealth of Independent States,2020,9.462,0.874,66.4,0.859,-0.058,0.941
+Afghanistan,South Asia,2014,7.718,0.526,52.88,0.509,0.104,0.871
+Mali,Sub-Saharan Africa,2016,7.695,0.836,50.7,0.696,-0.07,0.862
+Uganda,Sub-Saharan Africa,2014,7.611,0.821,53.68,0.834,0.009,0.898
+Nicaragua,Latin America and Caribbean,2013,8.569,0.868,66.16,0.859,0.039,0.636
+Malta,Western Europe,2012,10.389,0.922,71.84,0.861,0.352,0.67
+Cyprus,Western Europe,2015,10.445,0.77,73.1,0.628,0.114,0.893
+Cameroon,Sub-Saharan Africa,2009,8.029,0.729,47.72,0.698,-0.017,0.925
+Belarus,Commonwealth of Independent States,2014,9.856,0.88,64.62,0.647,-0.048,0.682
+Singapore,Southeast Asia,2016,11.419,0.925,76.2,0.904,0.143,0.047
+Poland,Central and Eastern Europe,2016,10.266,0.917,68.5,0.871,-0.091,0.848
+Sri Lanka,South Asia,2008,9.021,0.816,65.94,0.834,0.163,0.861
+Armenia,Commonwealth of Independent States,2014,9.307,0.739,65.84,0.506,-0.218,0.92
+Albania,Central and Eastern Europe,2020,9.497,0.71,69.3,0.754,0.007,0.891
+Tunisia,Middle East and North Africa,2020,9.231,0.719,67.5,0.668,-0.202,0.877
+Tunisia,Middle East and North Africa,2012,9.222,0.614,65.46,0.568,-0.176,0.899
+Lithuania,Central and Eastern Europe,2012,10.218,0.919,64.9,0.503,-0.273,0.957
+Italy,Western Europe,2010,10.666,0.872,72.8,0.738,-0.06,0.921
+Zimbabwe,Sub-Saharan Africa,2016,7.984,0.768,54.4,0.733,-0.095,0.724
+Serbia,Central and Eastern Europe,2016,9.688,0.895,67.4,0.614,-0.068,0.89
+Luxembourg,Western Europe,2011,11.595,0.934,71.88,0.962,0.106,0.388
+Bolivia,Latin America and Caribbean,2007,8.714,0.796,59.5,0.78,0.001,0.817
+Colombia,Latin America and Caribbean,2017,9.569,0.909,67.4,0.838,-0.157,0.875
+Hungary,Central and Eastern Europe,2014,10.183,0.845,66.24,0.494,-0.15,0.855
+United Arab Emirates,Middle East and North Africa,2012,10.958,0.856,66.44,0.92,0.074,0.589
+Belgium,Western Europe,2012,10.784,0.927,71.04,0.855,-0.05,0.758
+Uruguay,Latin America and Caribbean,2012,9.861,0.865,68.28,0.871,0.067,0.615
+United States,North America and ANZ,2007,10.933,0.9128000000000001,68.22,0.872,0.197,0.633
+Taiwan Province of China,East Asia,2016,10.855,0.895,80.5,0.719,-0.049,0.811
+Singapore,Southeast Asia,2009,11.149,0.866,74.5,0.776,-0.075,0.035
+Egypt,Middle East and North Africa,2008,9.186,0.738,59.88,0.6727142857142857,-0.087,0.914
+Venezuela,Latin America and Caribbean,2021,9.073,0.861,66.7,0.615,-0.169,0.827
+Colombia,Latin America and Caribbean,2008,9.351,0.88,65.46,0.795,-0.042,0.763
+Iraq,Middle East and North Africa,2010,9.112,0.854,59.6,0.419,-0.125,0.859
+Dominican Republic,Latin America and Caribbean,2017,9.725,0.894,65.5,0.855,-0.121,0.76
+Norway,Western Europe,2006,11.031,0.959,71.32,0.96,0.109,0.397
+Pakistan,South Asia,2018,8.464,0.685,58.5,0.773,0.069,0.799
+Sweden,Western Europe,2013,10.804,0.916,72.14,0.936,0.159,0.324
+Sweden,Western Europe,2021,10.867,0.934,72.7,0.945,0.086,0.237
+Lebanon,Middle East and North Africa,2008,9.743,0.717,64.96,0.524,0.035,0.927
+Gabon,Sub-Saharan Africa,2016,9.639,0.78,58.7,0.699,-0.204,0.817
+Kenya,Sub-Saharan Africa,2020,8.365,0.674,61.3,0.702,0.26,0.837
+Georgia,Commonwealth of Independent States,2019,9.617,0.675,64.3,0.811,-0.26,0.647
+Nigeria,Sub-Saharan Africa,2008,8.403,0.78,45.16,0.584,0.119,0.892
+Hungary,Central and Eastern Europe,2020,10.335,0.943,68.4,0.771,-0.12,0.836
+Ghana,Sub-Saharan Africa,2017,8.517,0.669,56.8,0.783,0.079,0.839
+Bosnia and Herzegovina,Central and Eastern Europe,2020,9.583,0.899,68.4,0.74,0.138,0.916
+China,East Asia,2009,8.996,0.798,67.42,0.771,-0.16,0.6
+Brazil,Latin America and Caribbean,2009,9.544,0.913,64.26,0.767,-0.055,0.723
+Kyrgyzstan,Commonwealth of Independent States,2017,8.526,0.883,63.8,0.859,0.143,0.874
+Kazakhstan,Commonwealth of Independent States,2013,10.074,0.889,61.76,0.782,-0.229,0.82
+Chile,Latin America and Caribbean,2009,9.885,0.832,68.84,0.747,0.149,0.734
+Kazakhstan,Commonwealth of Independent States,2014,10.101,0.795,62.28,0.799,0.004,0.805
+Moldova,Commonwealth of Independent States,2008,9.045,0.872,60.94,0.641,-0.056,0.926
+Chile,Latin America and Caribbean,2014,10.059,0.862,69.46,0.733,0.217,0.758
+Finland,Western Europe,2010,10.734,0.935,70.4,0.916,0.091,0.413
+Togo,Sub-Saharan Africa,2015,7.277,0.479,53.5,0.772,-0.069,0.733
+Poland,Central and Eastern Europe,2018,10.366,0.863,69.3,0.87,-0.254,0.72
+Pakistan,South Asia,2011,8.276,0.51,56.42,0.376,0.03,0.857
+Turkey,Middle East and North Africa,2021,10.24,0.822,67.199,0.576,-0.139,0.776
+Germany,Western Europe,2007,10.759,0.926,70.48,0.801,0.167,0.792
+Greece,Western Europe,2009,10.491,0.793,71.3,0.443,-0.293,0.959
+Denmark,Western Europe,2009,10.824,0.939,70.24,0.949,0.264,0.206
+Tajikistan,Commonwealth of Independent States,2021,8.091,0.86,64.281,0.832,-0.056,0.553
+United States,North America and ANZ,2011,10.913,0.922,68.68,0.863,0.161,0.697
+Costa Rica,Latin America and Caribbean,2012,9.74,0.902,70.1,0.929,0.046,0.794
+Ukraine,Commonwealth of Independent States,2018,9.42,0.901,64.6,0.663,-0.074,0.943
+Colombia,Latin America and Caribbean,2016,9.571,0.882,67.1,0.835,-0.1,0.898
+Panama,Latin America and Caribbean,2006,9.764,0.951,67.9,0.882,-0.047,0.912
+Malawi,Sub-Saharan Africa,2007,6.742,0.6,46.26,0.91,0.202,0.691
+Azerbaijan,Commonwealth of Independent States,2015,9.606,0.786,64.6,0.764,-0.198,0.616
+Madagascar,Sub-Saharan Africa,2017,7.368,0.626,58.7,0.57,-0.033,0.847
+Latvia,Central and Eastern Europe,2019,10.336,0.936,67.1,0.698,-0.194,0.789
+Malta,Western Europe,2014,10.486,0.941,72.08,0.904,0.404,0.67
+Malawi,Sub-Saharan Africa,2015,6.935,0.494,55.5,0.801,0.058,0.835
+Brazil,Latin America and Caribbean,2016,9.578,0.912,66.0,0.807,-0.1,0.781
+Kenya,Sub-Saharan Africa,2007,8.078,0.841,51.54,0.75,0.054,0.799
+Argentina,Latin America and Caribbean,2008,10.048,0.892,67.06,0.678,-0.132,0.865
+Portugal,Western Europe,2019,10.457,0.876,72.6,0.882,-0.234,0.915
+Liberia,Sub-Saharan Africa,2008,7.223,0.619,49.96,0.724,-0.035,0.84
+Italy,Western Europe,2008,10.711,0.88,72.44,0.543,0.049,0.946
+Hungary,Central and Eastern Europe,2016,10.248,0.9,66.8,0.554,-0.187,0.924
+Hong Kong S.A.R. of China,East Asia,2012,10.893,0.826,83.45,0.88,0.222,0.38
+Senegal,Sub-Saharan Africa,2011,7.904,0.602,56.56,0.641,-0.16,0.87
+Canada,North America and ANZ,2005,10.652,0.962,71.3,0.957,0.256,0.503
+Jordan,Middle East and North Africa,2011,9.289,0.878,65.0,0.76,-0.143,0.739
+Kenya,Sub-Saharan Africa,2006,8.039,0.909,50.22,0.616,-0.02,0.86
+Venezuela,Latin America and Caribbean,2020,9.395,0.805,66.9,0.612,-0.162,0.811
+Nigeria,Sub-Saharan Africa,2007,8.364,0.718,44.64,0.635,0.136,0.918
+Cameroon,Sub-Saharan Africa,2012,8.065,0.743,49.1,0.766,-0.032,0.898
+Belgium,Western Europe,2021,10.823,0.906,72.199,0.783,-0.153,0.646
+Lesotho,Sub-Saharan Africa,2016,7.953,0.798,46.6,0.729,-0.099,0.743
+Belgium,Western Europe,2016,10.819,0.929,71.6,0.866,-0.056,0.497
+United States,North America and ANZ,2021,11.023,0.92,68.2,0.837,0.098,0.698
+Iceland,Western Europe,2017,10.925,0.967,73.0,0.939,0.246,0.727
+Spain,Western Europe,2010,10.529,0.95,72.9,0.796,-0.138,0.84
+Panama,Latin America and Caribbean,2007,9.859,0.937,68.0,0.64,0.083,0.915
+Morocco,Middle East and North Africa,2010,8.746,0.621,63.5,0.663,-0.162,0.9
+Kazakhstan,Commonwealth of Independent States,2021,10.155,0.952,65.2,0.853,-0.069,0.733
+Rwanda,Sub-Saharan Africa,2016,7.576,0.665,59.9,0.911,0.025,0.159
+China,East Asia,2008,8.911,0.748,67.24,0.853,-0.092,0.6
+Czech Republic,Central and Eastern Europe,2010,10.419,0.934,68.1,0.779,-0.042,0.926
+South Africa,Sub-Saharan Africa,2006,9.386,0.913,48.02,0.649,-0.084,0.847
+Switzerland,Western Europe,2019,11.136,0.949,74.4,0.913,0.036,0.294
+Brazil,Latin America and Caribbean,2018,9.589,0.882,66.4,0.751,-0.117,0.763
+Iran,Middle East and North Africa,2021,9.584,0.71,66.3,0.608,0.218,0.714
+Cambodia,Southeast Asia,2008,7.879,0.619,56.9,0.914,0.045,0.888
+Albania,Central and Eastern Europe,2009,9.262,0.833,66.2,0.525,-0.158,0.864
+Niger,Sub-Saharan Africa,2015,7.03,0.713,52.0,0.728,-0.032,0.703
+Montenegro,Central and Eastern Europe,2011,9.755,0.818,67.26,0.546,-0.226,0.762
+Cambodia,Southeast Asia,2014,8.121,0.693,60.02,0.938,0.239,0.843
+Rwanda,Sub-Saharan Africa,2014,7.484,0.748,58.68,0.894,-0.023,0.078
+Italy,Western Europe,2009,10.652,0.88,72.62,0.701,0.24,0.89
+Laos,Southeast Asia,2011,8.548,0.691,56.3,0.882,0.459,0.587
+Egypt,Middle East and North Africa,2016,9.287,0.809,61.1,0.656,-0.141,0.818
+Brazil,Latin America and Caribbean,2017,9.583,0.905,66.2,0.765,-0.175,0.794
+Swaziland,Sub-Saharan Africa,2019,9.07,0.759,51.27,0.597,-0.191,0.724
+Ireland,Western Europe,2008,10.929,0.983,70.82,0.894,0.322,0.487
+Luxembourg,Western Europe,2010,11.592,0.952,71.7,0.908,0.096,0.423
+Mauritius,Sub-Saharan Africa,2018,10.008,0.909,66.4,0.867,-0.073,0.785
+South Korea,East Asia,2012,10.494,0.775,71.92,0.618,-0.04033333333333334,0.844
+Mongolia,East Asia,2007,8.833,0.881,58.82,0.781,0.064,0.918
+Spain,Western Europe,2021,10.571,0.932,74.7,0.761,-0.081,0.745
+Kazakhstan,Commonwealth of Independent States,2017,10.121,0.914,64.0,0.745,-0.035,0.755
+North Macedonia,Central and Eastern Europe,2010,9.496,0.687,64.502,0.513,-0.058,0.856
+United Kingdom,Western Europe,2018,10.743,0.928,72.3,0.838,0.226,0.404
+Yemen,Middle East and North Africa,2011,8.336,0.663,54.3,0.638,-0.173,0.754
+Ecuador,Latin America and Caribbean,2018,9.355,0.851,68.5,0.869,-0.099,0.831
+Spain,Western Europe,2014,10.492,0.948,73.38,0.738,-0.028,0.854
+Russia,Commonwealth of Independent States,2016,10.149,0.911,63.5,0.714,-0.181,0.925
+Zimbabwe,Sub-Saharan Africa,2006,7.711,0.822,41.58,0.431,-0.076,0.905
+Madagascar,Sub-Saharan Africa,2013,7.334,0.673,57.06,0.48,-0.019,0.868
+Kazakhstan,Commonwealth of Independent States,2006,9.804,0.872,58.2,0.731,-0.274,0.865
+Luxembourg,Western Europe,2013,11.58,0.917,72.24,0.79,-0.054,0.301
+Tanzania,Sub-Saharan Africa,2013,7.699,0.803,54.52,0.654,0.054,0.859
+Honduras,Latin America and Caribbean,2009,8.474,0.824,65.26,0.661,0.119,0.857
+Bosnia and Herzegovina,Central and Eastern Europe,2011,9.333,0.725,66.74,0.333,-0.035,0.925
+Colombia,Latin America and Caribbean,2007,9.33,0.894,65.34,0.786,-0.04,0.86
+Denmark,Western Europe,2007,10.891,0.954,69.92,0.932,0.24,0.206
+South Africa,Sub-Saharan Africa,2017,9.45,0.87,56.1,0.787,-0.129,0.865
+United States,North America and ANZ,2015,10.977,0.904,68.6,0.849,0.219,0.698
+Sierra Leone,Sub-Saharan Africa,2018,7.417,0.65,50.8,0.716,0.095,0.856
+Niger,Sub-Saharan Africa,2013,7.002,0.696,50.96,0.825,-0.077,0.711
+North Macedonia,Central and Eastern Europe,2016,9.64,0.871,65.225,0.706,0.08,0.87
+India,South Asia,2021,8.755,0.603,60.633,0.893,0.089,0.774
+Mongolia,East Asia,2019,9.418,0.946,62.5,0.711,0.149,0.873
+New Zealand,North America and ANZ,2021,10.643,0.948,73.4,0.929,0.134,0.242
+Lebanon,Middle East and North Africa,2019,9.597,0.866,67.6,0.447,-0.081,0.89
+Lebanon,Middle East and North Africa,2017,9.681,0.777,66.6,0.605,-0.074,0.911
+Ukraine,Commonwealth of Independent States,2008,9.488,0.86,61.16,0.487,-0.265,0.929
+Liberia,Sub-Saharan Africa,2021,7.288,0.72,56.498,0.735,0.05,0.85
+Egypt,Middle East and North Africa,2018,9.338,0.759,61.7,0.682,-0.215,0.7935
+Vietnam,Southeast Asia,2013,8.668,0.759,66.98,0.92,-0.027,0.771
+Mexico,Latin America and Caribbean,2009,9.752,0.868,66.44,0.682,-0.076,0.764
+Rwanda,Sub-Saharan Africa,2012,7.428,0.637,57.44,0.835,-0.012,0.081
+France,Western Europe,2006,10.659,0.944,71.48,0.789,0.126,0.699
+Burkina Faso,Sub-Saharan Africa,2015,7.568,0.705,52.4,0.659,0.004,0.693
+Philippines,Southeast Asia,2008,8.634,0.798,60.2,0.861,0.083,0.817
+Estonia,Central and Eastern Europe,2006,10.27,0.91,64.86,0.749,-0.264,0.797
+Argentina,Latin America and Caribbean,2007,10.018,0.862,66.94,0.653,-0.141,0.881
+Norway,Western Europe,2014,11.024,0.941,72.68,0.956,0.181,0.405
+Madagascar,Sub-Saharan Africa,2018,7.386,0.666,59.1,0.551,0.003,0.889
+Argentina,Latin America and Caribbean,2018,10.032,0.9,68.8,0.846,-0.211,0.855
+Uzbekistan,Commonwealth of Independent States,2014,8.659,0.952,64.0,0.954,0.061,0.536
+Colombia,Latin America and Caribbean,2021,9.557,0.847,68.001,0.837,-0.135,0.841
+Belgium,Western Europe,2014,10.795,0.944,71.28,0.861,0.001,0.512
+Sierra Leone,Sub-Saharan Africa,2006,7.136,0.561,40.3,0.679,0.101,0.836
+Mauritius,Sub-Saharan Africa,2016,9.935,0.836,65.8,0.819,0.139,0.891
+Zimbabwe,Sub-Saharan Africa,2015,7.992,0.736,53.8,0.667,-0.123,0.81
+Hungary,Central and Eastern Europe,2010,10.106,0.896,65.6,0.514,-0.145,0.983
+India,South Asia,2019,8.818,0.561,60.5,0.876,0.112,0.752
+Finland,Western Europe,2006,10.745,0.965,69.76,0.969,-0.005,0.132
+Ukraine,Commonwealth of Independent States,2021,9.436,0.888,64.902,0.724,-0.011,0.924
+Haiti,Latin America and Caribbean,2017,7.475,0.647,55.5,0.484,0.381,0.647
+Netherlands,Western Europe,2017,10.921,0.937,72.2,0.92,0.25,0.363
+Ukraine,Commonwealth of Independent States,2010,9.374,0.884,62.2,0.484,-0.189,0.954
+South Korea,East Asia,2010,10.447,0.816,71.4,0.677,-0.033,0.752
+Slovenia,Central and Eastern Europe,2009,10.41,0.919,68.9,0.896,-0.019,0.804
+Portugal,Western Europe,2013,10.312,0.867,71.4,0.788,-0.118,0.946
+Burkina Faso,Sub-Saharan Africa,2006,7.367,0.796,46.66,0.588,0.028,0.798
+Taiwan Province of China,East Asia,2017,10.871,0.891,80.5,0.76,-0.07,0.743
+Italy,Western Europe,2018,10.65,0.913,73.6,0.65,-0.021,0.888
+El Salvador,Latin America and Caribbean,2014,8.986,0.798,65.0,0.778,-0.194,0.781
+Egypt,Middle East and North Africa,2015,9.266,0.73,60.8,0.659,-0.089,0.684
+Egypt,Middle East and North Africa,2014,9.245,0.619,60.64,0.578,-0.126,0.749
+Taiwan Province of China,East Asia,2015,10.842,0.885,80.2,0.701,0.019,0.857
+Chad,Sub-Saharan Africa,2013,7.498,0.714,46.06,0.488,-0.045,0.882
+Panama,Latin America and Caribbean,2018,10.343,0.904,69.6,0.861,-0.131,0.837
+Australia,North America and ANZ,2018,10.811,0.94,73.6,0.916,0.146,0.405
+Jordan,Middle East and North Africa,2017,9.194,0.815,66.6,0.766,-0.152,0.739
+Turkmenistan,Commonwealth of Independent States,2021,9.629,0.983,62.409,0.877,0.273,0.888
+Togo,Sub-Saharan Africa,2006,7.078,0.435,49.26,0.628,-0.007,0.85
+Slovenia,Central and Eastern Europe,2010,10.419,0.917,69.2,0.896,0.029,0.845
+Nicaragua,Latin America and Caribbean,2007,8.434,0.866,64.48,0.836,0.14,0.826
+Peru,Latin America and Caribbean,2008,9.142,0.777,65.82,0.638,-0.067,0.896
+Pakistan,South Asia,2021,8.458,0.651,58.709,0.726,0.098,0.787
+Malta,Western Europe,2009,10.331,0.916,71.38,0.803,0.464,0.67
+United Arab Emirates,Middle East and North Africa,2021,11.085,0.844,67.333,0.932,0.074,0.589
+Mauritius,Sub-Saharan Africa,2011,9.767,0.8,64.7,0.848,0.191,0.847
+Poland,Central and Eastern Europe,2019,10.407,0.878,69.7,0.883,-0.231,0.696
+Kosovo,Central and Eastern Europe,2016,9.228,0.824,71.65,0.827,0.125,0.941
+Rwanda,Sub-Saharan Africa,2019,7.708,0.489,61.7,0.869,0.064,0.168
+Turkey,Middle East and North Africa,2011,9.996,0.692,64.64,0.446,-0.242,0.649
+Gambia,Sub-Saharan Africa,2021,7.686,0.69,55.16,0.697,0.424,0.746
+Chad,Sub-Saharan Africa,2012,7.476,0.673,45.74,0.563,-0.034,0.884
+Iran,Middle East and North Africa,2016,9.561,0.566,65.4,0.773,0.186,0.713
+Ireland,Western Europe,2016,11.199,0.958,72.1,0.875,0.174,0.399
+Sri Lanka,South Asia,2009,9.049,0.83,66.02,0.799,0.306,0.69
+Moldova,Commonwealth of Independent States,2007,8.968,0.804,60.76,0.696,-0.186,0.93
+Benin,Sub-Saharan Africa,2012,7.923,0.523,52.26,0.769,-0.111,0.806
+Uzbekistan,Commonwealth of Independent States,2015,8.714,0.968,64.2,0.98,0.375,0.471
+Belgium,Western Europe,2015,10.81,0.885,71.4,0.869,0.062,0.469
+South Korea,East Asia,2008,10.383,0.754,70.8,0.524,-0.102,0.771
+Algeria,Middle East and North Africa,2018,9.348,0.799,65.9,0.583,-0.146,0.759
+Albania,Central and Eastern Europe,2019,9.544,0.686,69.0,0.777,-0.099,0.914
+Ghana,Sub-Saharan Africa,2013,8.445,0.676,55.24,0.794,-0.065,0.88
+Tanzania,Sub-Saharan Africa,2018,7.859,0.675,57.5,0.807,0.153,0.612
+Greece,Western Europe,2013,10.243,0.687,71.68,0.426,-0.272,0.941
+Lebanon,Middle East and North Africa,2021,9.626,0.848,67.355,0.525,-0.073,0.898
+Iran,Middle East and North Africa,2017,9.584,0.714,65.7,0.731,0.218,0.715
+South Africa,Sub-Saharan Africa,2014,9.464,0.881,54.34,0.794,-0.117,0.82
+Kosovo,Central and Eastern Europe,2007,8.928,0.848,69.2,0.381,0.144,0.894
+United Kingdom,Western Europe,2015,10.712,0.936,71.7,0.833,0.3,0.456
+Switzerland,Western Europe,2012,11.079,0.947,72.78,0.945,0.139,0.323
+Vietnam,Southeast Asia,2018,8.934,0.832,67.9,0.909,-0.041,0.808
+Paraguay,Latin America and Caribbean,2007,9.126,0.863,63.84,0.699,0.132,0.93
+Cambodia,Southeast Asia,2009,7.865,0.818,57.7,0.937,0.152,0.965
+Switzerland,Western Europe,2018,11.134,0.93,74.1,0.926,0.101,0.301
+Germany,Western Europe,2012,10.816,0.926,71.06,0.904,0.071,0.679
+El Salvador,Latin America and Caribbean,2006,8.873,0.878,62.92,0.683,-0.056,0.807
+Argentina,Latin America and Caribbean,2012,10.091,0.902,67.66,0.747,-0.148,0.817
+Singapore,Southeast Asia,2014,11.383,0.822,75.68,0.835,0.154,0.133
+Kazakhstan,Commonwealth of Independent States,2009,9.884,0.893,59.7,0.856,-0.249,0.845
+Malawi,Sub-Saharan Africa,2018,6.949,0.528,57.6,0.799,0.073,0.766
+Cambodia,Southeast Asia,2007,7.829,0.675,56.1,0.819,0.116,0.879
+Malaysia,Southeast Asia,2010,9.93,0.839,65.6,0.769,0.032,0.844
+India,South Asia,2014,8.538,0.621,58.6,0.809,-0.026,0.832
+Botswana,Sub-Saharan Africa,2021,9.782,0.784,59.269,0.824,-0.246,0.801
+Peru,Latin America and Caribbean,2009,9.145,0.799,66.06,0.638,-0.079,0.88
+Guatemala,Latin America and Caribbean,2015,9.003,0.823,63.9,0.869,0.051,0.822
+Senegal,Sub-Saharan Africa,2008,7.916,0.756,54.74,0.612,-0.03,0.879
+Iraq,Middle East and North Africa,2016,9.354,0.719,59.0,0.666,-0.052,0.799
+South Korea,East Asia,2017,10.621,0.807,73.3,0.538,0.014,0.851
+Jamaica,Latin America and Caribbean,2006,9.225,0.909,64.9,0.738,-0.004,0.946
+Estonia,Central and Eastern Europe,2021,10.481,0.941,68.8,0.909,-0.106,0.527
+Philippines,Southeast Asia,2020,9.061,0.781,62.1,0.932,-0.116,0.744
+Uzbekistan,Commonwealth of Independent States,2011,8.493,0.924,63.4,0.934,0.042,0.522
+Peru,Latin America and Caribbean,2010,9.217,0.812,66.3,0.757,-0.06,0.881
+Cambodia,Southeast Asia,2010,7.907,0.697,58.5,0.94,0.35,0.896
+Togo,Sub-Saharan Africa,2017,7.324,0.508,54.3,0.717,-0.042,0.726
+Vietnam,Southeast Asia,2012,8.626,0.775,66.82,0.856,-0.11,0.815
+Portugal,Western Europe,2011,10.353,0.856,71.0,0.875,-0.173,0.962
+Greece,Western Europe,2017,10.278,0.753,72.2,0.438,-0.29,0.872
+Thailand,Southeast Asia,2010,9.576,0.898,65.5,0.86,0.536,0.917
+United Kingdom,Western Europe,2019,10.751,0.943,72.5,0.854,0.271,0.485
+Bangladesh,South Asia,2017,8.334,0.713,63.8,0.896,0.012,0.635
+Venezuela,Latin America and Caribbean,2010,9.717,0.932,65.7,0.768,-0.155,0.754
+Kyrgyzstan,Commonwealth of Independent States,2010,8.329,0.885,61.1,0.72,-0.072,0.926
+Romania,Central and Eastern Europe,2013,10.004,0.778,65.86,0.655,-0.129,0.952
+Mongolia,East Asia,2011,9.061,0.948,60.5,0.7,0.151,0.931
+Kosovo,Central and Eastern Europe,2018,9.296,0.822,72.2,0.89,0.269,0.922
+Nigeria,Sub-Saharan Africa,2021,8.533,0.74,50.102,0.737,0.037,0.878
+Myanmar,Southeast Asia,2019,8.545,0.763,59.3,0.899,0.561,0.682
+Mauritania,Sub-Saharan Africa,2013,8.506,0.741,55.46,0.603,-0.079,0.676
+Turkey,Middle East and North Africa,2020,10.219,0.857,67.6,0.51,-0.111,0.774
+India,South Asia,2015,8.604,0.61,58.9,0.777,-0.005,0.776
+Niger,Sub-Saharan Africa,2012,6.987,0.7,50.44,0.734,-0.064,0.777
+Gambia,Sub-Saharan Africa,2017,7.637,0.697,54.7,0.812,0.111,0.572
+El Salvador,Latin America and Caribbean,2013,8.974,0.827,64.8,0.716,-0.15,0.772
