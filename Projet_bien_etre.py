@@ -165,13 +165,12 @@ if page == pages[2]:
       color='blue',
       height=600,
       width=400)
-  fig_1.add_trace(go.Box(y=happy_complet["Ladder_score"], x=happy_complet["Regional_indicator"], fillcolor='moccasin'))
+  fig_1.add_trace(go.Box(y=happy_complet["Ladder_score"], x=happy_complet["Regional_indicator"], fillcolor='#87AC99', line=dict(color='#69939D'), marker=dict(color='#873260')))
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
      st.plotly_chart(fig_1, use_container_width=True)
   st.markdown("""
-    <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)
-  show_text = st.checkbox("Interpertration du box plot")
+    show_text = st.checkbox("Interpertration du box plot")
 # Afficher le texte en fonction de l'état de la case à cocher
   if show_text:
      st.write("On constate que les scores de bien-être les plus élevés sont attribués aux zones Western Europe et North America and ANZ, ce qui correspond à l'hémisphère Nord de la planète.")
@@ -203,8 +202,6 @@ if page == pages[2]:
   with col2:
      st.plotly_chart(fig_2, use_container_width=True)
 
-  st.markdown("""
-      <h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)
   show_text_2 = st.checkbox("Interpretation de la carte")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_2:
@@ -214,14 +211,13 @@ if page == pages[2]:
       st.write("Globalement, les pays ayant des ladder score élevés se situent en Amérique du Nord, en Europe et en Océanie.")
       st.write("A l'inverse, les pays ayant des ladder scores faibles se situent principalement en Afrique et en Asie du Sud.")
    
-   
-  
   # Top 10 Ladder Score
   happy_complet_top10 = happy_complet.groupby('year').apply(lambda x: x.nlargest(10, 'Ladder_score')).reset_index(drop=True)
   fig_3 = px.bar(
       happy_complet_top10,
       x='Ladder_score',
       y='Country_name',
+      color_discrete_sequence=['#6B9998'],
       animation_frame='year',
       orientation='h',
       title='Top 10 des pays ayant le Ladder_score le plus élevé par année',
@@ -239,6 +235,7 @@ if page == pages[2]:
       happy_complet_flop10,
       x='Ladder_score',
       y='Country_name',
+      color_discrete_sequence=['#C30B4E'],
       animation_frame='year',
       orientation='h',
       title='Flop 10 des pays ayant le Ladder_score le plus faible par année',
@@ -257,7 +254,7 @@ if page == pages[2]:
       x='Regional_indicator',
       animation_frame='year',
       color='Top_Flop',
-      color_discrete_map={'Top': 'lightblue', 'Flop': 'lightcoral'},
+      color_discrete_map={'Top': '#6B9998', 'Flop': '#C30B4E'},
       title='Top/Flop 10 des pays par région en fonction du Ladder Score',
       width=200,
       height=600)
@@ -296,7 +293,6 @@ if page == pages[2]:
   with col2:
      st.plotly_chart(fig_6, use_container_width=True)
 
-  st.markdown("""<h3 style='text-align: left; font-weight: bold; font-size : 12 px'>Interpretation</h3>""",unsafe_allow_html=True)  
   show_text_4 = st.checkbox("### Interpretation de la heatmap")
   # Afficher le texte en fonction de l'état de la case à cocher
   if show_text_4:
@@ -312,7 +308,7 @@ if page == pages[2]:
       x=happy_complet['Logged_GDP_per_capita'],
       y=happy_complet['Healthy_life_expectancy'],
       mode='markers',
-      marker=dict(color='light blue', size=10, line=dict(width=2, color='white')),
+      marker=dict(color='#779B52', size=10, line=dict(width=2, color='white')),
       text=happy_complet.index,
       hoverinfo='text')
   fig_7.add_trace(scatter)
@@ -389,7 +385,7 @@ if page == pages[2]:
 if page == pages[2] : 
   st.markdown('''
               <div style="text-align:center; margin-top: 20px;">
-              <a href="/Modélisation 🤖 " style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</a>
+              <a " style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</a>
 </div>''', unsafe_allow_html=True)
 
 # happy_model = happy_complet
