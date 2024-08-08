@@ -381,10 +381,7 @@ if page == pages[2]:
       st.write("- Les variables les plus mitigées restent : Healthy Life Expectancy, Freedom to make a life choice")
 
 if page == pages[2] : 
-  st.markdown('''
-              <div style="text-align:center; margin-top: 20px;">
-              <a " style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</a>
-</div>''', unsafe_allow_html=True)
+  st.markdown('''<div style="text-align:center; margin-top: 20px;style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la modélisation</div>''', unsafe_allow_html=True)
 
 # happy_model = happy_complet
 # # On sépare les données, la cible étant Ladder_score
