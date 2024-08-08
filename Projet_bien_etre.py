@@ -138,7 +138,7 @@ happy_complet=happy_complet.loc[(happy_complet.isna().sum(axis=1))< 3]
 if page == pages[1] : 
   st.markdown('''
               <div style="text-align:center; margin-top: 20px;">
-              <a href="/Data Visualisation 📊" style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la visualisation des données</a>
+              <a style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la visualisation des données</a>
 </div>''', unsafe_allow_html=True)
 
 if page == pages[2]: 
@@ -170,7 +170,7 @@ if page == pages[2]:
   with col2:
      st.plotly_chart(fig_1, use_container_width=True)
   
-  show_text = st.checkbox("Interpertration du box plot")
+  show_text = st.checkbox("Interpretation du box plot")
 # Afficher le texte en fonction de l'état de la case à cocher
   if show_text:
      st.write("On constate que les scores de bien-être les plus élevés sont attribués aux zones Western Europe et North America and ANZ, ce qui correspond à l'hémisphère Nord de la planète.")
@@ -269,7 +269,6 @@ if page == pages[2]:
   if show_text_3:
       st.write("Ces graphiques nous permettent de visualiser rapidement les tops et flop au cours des années et de placer géographiquement les résultats obtenus")
 
-  
   st.write("")
   st.write("")
   st.write("###### Dans un deuxième temps, nous désirons analyser la corrélation entre nos valeurs.")
