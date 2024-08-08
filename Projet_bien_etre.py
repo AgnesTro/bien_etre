@@ -137,8 +137,7 @@ happy_complet=happy_complet.loc[(happy_complet.isna().sum(axis=1))< 3]
 
 if page == pages[1] : 
   st.markdown('''
-              <div style="text-align:center; margin-top: 20px;">
-              <a style="color:#003885; font-size:20px; font-weight:bold;">Nous pouvons passer à la visualisation des données</a>
+              <div style="text-align:center; margin-top: 20px;">Nous pouvons passer à la visualisation des données</div>
 </div>''', unsafe_allow_html=True)
 
 if page == pages[2]: 
